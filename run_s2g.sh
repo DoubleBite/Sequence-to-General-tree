@@ -1,8 +1,8 @@
 PACKAGE="libs"
 CONFIG="configs/s2g.jsonnet"
-DATASET="data/geometry_5fold_0503"
+DATASET="data/geometryQA_5fold"
 
-# It will create a "main directory" in results.
+# It will create a "main directory" in "results".
 # The main directory will have five "sub-directories" for 5-fold cross validation.
 FIVE_FOLD_DIR="results/${1}"
 
@@ -28,5 +28,6 @@ for i in {0..4}; do
         --include-package $PACKAGE \
         --output-file ${RESULT_DIR}/predictions.jsonl \
         --use-dataset-reader \
-        --predictor math
+        --predictor math \
+        --cuda-device 0
 done

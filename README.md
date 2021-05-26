@@ -1,10 +1,8 @@
 # Sequence to General Tree: Knowledge-Guided Geometry Word Problem Solving
 
-This is the official repository for the ACL 2021 paper "Sequence to General Tree: Knowledge-Guided Geometry Word Problem Solving". In this paper, we introduce a **sequence-to-general-tree** architecture which aims to generalize previous sequence-to-tree models on the Math Word Problem Solving task. 
-folr the ACL 2021 paper
+This is the official repository for the ACL 2021 paper "Sequence to General Tree: Knowledge-Guided Geometry Word Problem Solving". In this paper, we introduce a **sequence-to-general-tree (S2G)** architecture which aims to generalize the previous sequence-to-tree models. Instead of mapping the problem text into a binary expression tree, our S2G can learn to map the problem text into an operation tree where the nodes can be formulas with arbitrary number of children (from unary to N-ary). In this way, we can incorporate domain knowledge (formulas) into problem-solving, improving the solver performance and making the results more interpretable.
 
 
-where we introduce a 
 
 
 

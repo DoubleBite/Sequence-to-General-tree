@@ -1,0 +1,3049 @@
+[
+    {
+        "id": 1,
+        "original_text": "一辆压路机每分钟行驶50米，压路的宽度为3米．如果行驶压路机12分钟，可以压路多少平方米？",
+        "segmented_text": "一 辆 压路机 每分钟 行驶 50 米 ， 压路 的 宽度 为 3 米 ． 如果 行驶 压路机 12 分钟 ， 可以 压路 多少 平方米 ？",
+        "equation": "x=50*12*3",
+        "ans": "1800",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 2,
+        "original_text": "在一正方形花池的4周栽了44棵柳树，每两棵柳树之间的间隔是20米，这个正方形的周长=多少米？",
+        "segmented_text": "在 一 正方形 花池 的 4 周 栽 了 44 棵 柳树 ， 每 两棵 柳树 之间 的 间隔 是 20 米 ， 这个 正方形 的 周长 = 多少 米 ？",
+        "equation": "x=44*20",
+        "ans": "880",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 3,
+        "original_text": "学校走廊的柱子高3米，底面周长3.14米，给100根这样的柱子刷油漆，每千克油漆可以漆2平方米，一共要用油漆多少千克？",
+        "segmented_text": "学校 走廊 的 柱子 高 3 米 ， 底面 周长 3.14 米 ， 给 100 根 这样 的 柱子 刷油漆 ， 每千克 油漆 可以 漆 2 平方米 ， 一共 要 用 油漆 多少 千克 ？",
+        "equation": "x=3.14*3*100/2",
+        "ans": "471",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 4,
+        "original_text": "平行四边形的底边长8分米，高4.5分米，面积=多少平方分米．",
+        "segmented_text": "平行四边形 的 底边 长 8 分 米 ， 高 4.5 分 米 ， 面积 = 多少 平方分米 ．",
+        "equation": "x=8*4.5",
+        "ans": "36",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 5,
+        "original_text": "一个长方体盒子的长是(4/5)米，宽是(3/4)米，高是(1/6)米．这个盒子最多能盛多少水？",
+        "segmented_text": "一 个 长方体 盒子 的 长 是 (4/5) 米 ， 宽 是 (3/4) 米 ， 高 是 (1/6) 米 ． 这个 盒子 最 多 能 盛 多少 水 ？",
+        "equation": "x=cuboid_volume((4/5), (3/4), (1/6))",
+        "ans": "((1)/(10))",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=(4/5)*(3/4)*(1/6)"
+        ]
+    },
+    {
+        "id": 6,
+        "original_text": "圆柱的体积是75立方厘米，高是15厘米，底面积=多少平方厘米．",
+        "segmented_text": "圆柱 的 体积 是 75 立方厘米 ， 高 是 15 厘米 ， 底 面积 = 多少 平方厘米 ．",
+        "equation": "x=75/15",
+        "ans": "5",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 7,
+        "original_text": "金湖水域面积420.08平方千米，陆地面积是水域面积的2.3倍，陆地面积比水域面积多多少平方千米？",
+        "segmented_text": "金 湖 水域 面积 420.08 平方千米 ， 陆地 面积 是 水域 面积 的 2.3 倍 ， 陆地 面积 比 水域 面积 多 多少 平方千米 ？",
+        "equation": "x=420.08*2.3-420.08",
+        "ans": "546.104",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 8,
+        "original_text": "一个平行四边形的面积是4.5平方米，底边上的高是1.5米，底长=多少米．",
+        "segmented_text": "一 个 平行四边形 的 面积 是 4.5 平方米 ， 底边 上 的 高 是 1.5 米 ， 底 长 = 多少 米 ．",
+        "equation": "x=4.5/1.5",
+        "ans": "3",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 9,
+        "original_text": "一个长方体水箱，长为8分米，宽为6分米，高为5分米，装水高4分米，现在把一块长3分米，宽2分米的长方体铁块浸没在水箱中，这时水面高4.2分米．求这个铁块的高=多少分米？",
+        "segmented_text": "一 个 长方体 水箱 ， 长 为 8 分 米 ， 宽 为 6 分 米 ， 高 为 5 分 米 ， 装 水 高 4 分 米 ， 现在 把 一块 长 3 分 米 ， 宽 2 分 米 的 长方体 铁块 浸没 在 水箱 中 ， 这时 水面 高 4.2 分 米 ． 求 这个 铁块 的 高 = 多少 分 米 ？",
+        "equation": "x=cuboid_volume(8, 6, (4.2-4))/rectangle_area(3, 2)",
+        "ans": "1.6",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)",
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=8*6*(4.2-4)/(3*2)",
+            "x=cuboid_volume(8, 6, (4.2-4))/(3*2)"
+        ]
+    },
+    {
+        "id": 10,
+        "original_text": "李叔叔买了30000元定期5年的国家建设债券，年利率为3.14%．到期时，李叔叔的本金和利息共有多少元？",
+        "segmented_text": "李 叔叔 买 了 30000 元 定期 5 年 的 国家 建设 债券 ， 年利率 为 3.14% ． 到期 时 ， 李 叔叔 的 本金 和 利息 共有 多少 元 ？",
+        "equation": "x=30000+30000*3.14%*5",
+        "ans": "34710",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 11,
+        "original_text": "把一个高是40厘米的圆柱的侧面展开，得到一个正方形，这个圆柱的侧面积=多少平方厘米．",
+        "segmented_text": "把 一个 高 是 40 厘米 的 圆柱 的 侧面 展开 ， 得到 一个 正方形 ， 这个 圆柱 的 侧 面积 = 多少 平方厘米 ．",
+        "equation": "x=square_area(40)",
+        "ans": "1600",
+        "knowledge": [
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=40*40"
+        ]
+    },
+    {
+        "id": 12,
+        "original_text": "一个车轮的外直径是4dm，它滚动10距离=多少dm．",
+        "segmented_text": "一 个 车轮 的 外 直径 是 4dm ， 它 滚动 10 距离 = 多少 dm ．",
+        "equation": "x=circumference_diameter(4)*10",
+        "ans": "125.6",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*4*10"
+        ]
+    },
+    {
+        "id": 13,
+        "original_text": "一块平行四边形的街头广告牌，底是12.5米，高是6.4米．如果要油饰这块广告牌，每平方米用油漆0.6千克，需要多少千克油漆？",
+        "segmented_text": "一 块 平行四边形 的 街头 广告牌 ， 底 是 12.5 米 ， 高 是 6.4 米 ． 如果 要 油饰 这块 广告牌 ， 每平方米 用 油漆 0.6 千克 ， 需要 多少 千克 油漆 ？",
+        "equation": "x=12.5*6.4*0.6",
+        "ans": "48",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 14,
+        "original_text": "明明和圆圆比赛跳绳，明明跳了45下，圆圆比明明少跳23下，圆圆跳了多少下？",
+        "segmented_text": "明明 和 圆圆 比赛 跳绳 ， 明明 跳 了 45 下 ， 圆圆 比 明明 少 跳 23 下 ， 圆圆 跳 了 多少 下 ？",
+        "equation": "x=45-23",
+        "ans": "22",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 15,
+        "original_text": "一个长18cm，宽12cm，高5cm的长方体，切一刀，使它成为两个完全一样的长方体，并且切面最大，切面=多少cm^2．",
+        "segmented_text": "一 个 长 18cm ， 宽 12cm ， 高 5cm 的 长方体 ， 切 一刀 ， 使 它 成为 两个 完全 一样 的 长方体 ， 并且 切面 最大 ， 切面 = 多少 cm ^ 2 ．",
+        "equation": "x=rectangle_area(18, 12)",
+        "ans": "216",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=18*12"
+        ]
+    },
+    {
+        "id": 16,
+        "original_text": "一个长方体木块，长15cm，宽10cm，高8cm，把它削成最大的正方体，削去部分的体积=多少立方厘米？",
+        "segmented_text": "一 个 长方体 木块 ， 长 15cm ， 宽 10cm ， 高 8cm ， 把 它 削成 最大 的 正方体 ， 削去 部分 的 体积 = 多少 立方厘米 ？",
+        "equation": "x=cuboid_volume(15, 10, 8)-cubic_volume(8)",
+        "ans": "688",
+        "knowledge": [
+            "(cubic, side * side * side = area)",
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=15*10*8-8*8*8",
+            "x=15*10*8-cubic_volume(8)"
+        ]
+    },
+    {
+        "id": 17,
+        "original_text": "一个圆的半径是3厘米，如果把它的半径延长2厘米，那么面积增加多少．",
+        "segmented_text": "一 个 圆 的 半径 是 3 厘米 ， 如果 把 它 的 半径 延长 2 厘米 ， 那么 面积 增加 多少 ．",
+        "equation": "x=circle_area((3+2)) - circle_area(3)",
+        "ans": "50.24",
+        "knowledge": [
+            "(circle, 3.14 * radius^2 = area)"
+        ],
+        "history": [
+            "x=3.14*[(3+2)^2-3^2]"
+        ]
+    },
+    {
+        "id": 18,
+        "original_text": "一个平行四边形的面积是36平方米，底是7.2米，高应=多少米．",
+        "segmented_text": "一 个 平行四边形 的 面积 是 36 平方米 ， 底 是 7.2 米 ， 高 应 = 多少 米 ．",
+        "equation": "x=36/7.2",
+        "ans": "5",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 19,
+        "original_text": "长方体货仓1个，长40米，宽30米，高15米，这个长方体货仓最多可容纳8立方米的正方体货箱多少个．",
+        "segmented_text": "长方体 货仓 1 个 ， 长 40 米 ， 宽 30 米 ， 高 15 米 ， 这个 长方体 货仓 最 多 可 容纳 8 立方米 的 正方体 货箱 多少 个 ．",
+        "equation": "x=cuboid_volume(40, 30, 15)/8",
+        "ans": "2250",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=40*30*15/8"
+        ]
+    },
+    {
+        "id": 20,
+        "original_text": "某海岛战士为解决岛上淡水缺乏问题，和当地居民共同修建一个长22m，宽10m，可以蓄淡水396方的长方体蓄水池，现在已经挖出66方的土，还要往下挖多深？",
+        "segmented_text": "某 海岛 战士 为 解决 岛上 淡水 缺乏 问题 ， 和 当地 居民 共同 修建 一个 长 22m ， 宽 10m ， 可以 蓄 淡水 396 方 的 长方体 蓄水池 ， 现在 已经 挖出 66 方 的 土 ， 还要 往 下 挖 多 深 ？",
+        "equation": "x=(396-66)/rectangle_area(22, 10)",
+        "ans": "1.5",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=(396-66)/(22*10)"
+        ]
+    },
+    {
+        "id": 21,
+        "original_text": "甲、乙两人沿着直径是100米的环形跑道同时同地背向而行，甲出发3分钟后首次与乙相遇，首次相遇时乙走了全程的40%，甲每分钟走多少米？",
+        "segmented_text": "甲 、 乙 两 人 沿着 直径 是 100 米 的 环形 跑道 同时 同 地 背向 而 行 ， 甲 出发 3 分钟 后 首次 与 乙 相遇 ， 首次 相遇 时 乙 走 了 全程 的 40% ， 甲 每分钟 走 多少 米 ？",
+        "equation": "x=circumference_diameter(100)*(1-40%)/3",
+        "ans": "62.8",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=100*3.14*(1-40%)/3"
+        ]
+    },
+    {
+        "id": 22,
+        "original_text": "我国是一个缺水的国家．根据1999年中国水资源公报，我国人均水资源约为2200立方米，仅占世界人均水平的25%．世界人均水资源=多少立方米？",
+        "segmented_text": "我国 是 一个 缺水 的 国家 ． 根据 1999 年 中国 水资源 公报 ， 我国 人均 水资源 约 为 2200 立方米 ， 仅 占 世界 人均 水平 的 25% ． 世界 人均 水资源 = 多少 立方米 ？",
+        "equation": "x=2200/25%",
+        "ans": "8800",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 23,
+        "original_text": "小亮妈妈今年元月1日购买了20000的国债，年利率为3.14%到期是她可获本息多少元．",
+        "segmented_text": "小 亮 妈妈 今年 元月 1 日 购买 了 20000 的 国债 ， 年利率 为 3.14% 到期 是 她 可 获 本息 多少 元 ．",
+        "equation": "x=20000+20000*3.14%*1",
+        "ans": "20628",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 24,
+        "original_text": "往一个容积为600立方米的蓄水池注水．4小时可以注满这个水池的(2/5)，如果要把这个水池全部注满水，一共需要几小时？",
+        "segmented_text": "往 一个 容积 为 600 立方米 的 蓄水池 注水 ． 4 小时 可以 注满 这个 水池 的 (2/5) ， 如果 要 把 这个 水池 全部 注满 水 ， 一共 需要 几小时 ？",
+        "equation": "x=4/(2/5)",
+        "ans": "10",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 25,
+        "original_text": "把一个圆柱的侧面展开，是一个边长9.42cm的正方形，这个圆柱的底面直径=．",
+        "segmented_text": "把 一个 圆柱 的 侧面 展开 ， 是 一个 边长 9.42cm 的 正方形 ， 这个 圆柱 的 底面 直径 = ．",
+        "equation": "x=9.42/3.14",
+        "ans": "3",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 26,
+        "original_text": "一个平行四边形的面积是18平方米，底是6米，高=多少米．",
+        "segmented_text": "一 个 平行四边形 的 面积 是 18 平方米 ， 底 是 6 米 ， 高 = 多少 米 ．",
+        "equation": "x=18/6",
+        "ans": "3",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 27,
+        "original_text": "甲、乙两人绕周长1000米的环形广场竞走，已知甲每分钟走125米，乙的速度是甲的2倍．现在甲在乙后面250米，乙追上甲需要多少分钟？",
+        "segmented_text": "甲 、 乙 两 人 绕 周长 1000 米 的 环形 广场 竞走 ， 已知 甲 每分钟 走 125 米 ， 乙 的 速度 是 甲 的 2 倍 ． 现在 甲 在 乙 后面 250 米 ， 乙 追 上 甲 需要 多少 分钟 ？",
+        "equation": "x=(1000-250)/(125*2-125)",
+        "ans": "6",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 28,
+        "original_text": "一个长6厘米，宽3厘米的长方形，它的面积=多少平方厘米．",
+        "segmented_text": "一 个 长 6 厘米 ， 宽 3 厘米 的 长方形 ， 它 的 面积 = 多少 平方厘米 ．",
+        "equation": "x=rectangle_area(6, 3)",
+        "ans": "18",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=6*3"
+        ]
+    },
+    {
+        "id": 29,
+        "original_text": "一个直角三角形3边长度分别为6cm、10cm和8cm，这个直角三角形面积=多少cm^2．",
+        "segmented_text": "一 个 直角三角形 3 边 长度 分别 为 6cm 、 10cm 和 8cm ， 这个 直角三角形 面积 = 多少 cm ^ 2 ．",
+        "equation": "x=triangle_area(6, 8)",
+        "ans": "24",
+        "knowledge": [
+            "(triangle, base * height / 2 = area)"
+        ],
+        "history": [
+            "x=6*8/2"
+        ]
+    },
+    {
+        "id": 30,
+        "original_text": "小张和小李在400米的环形跑道上跑步，两人同时从同一地点出发，反向而行．小张每秒跑4米，小李每秒跑6米，经过多少秒两人第一次相遇？",
+        "segmented_text": "小张 和 小 李 在 400 米 的 环形 跑道 上 跑步 ， 两 人 同时 从 同一 地点 出发 ， 反向而行 ． 小张 每秒 跑 4 米 ， 小 李 每秒 跑 6 米 ， 经过 多少 秒 两 人 第一次 相遇 ？",
+        "equation": "x=400/(4+6)",
+        "ans": "40",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 31,
+        "original_text": "教室的长是8米，宽是6米，高是3.5米，现在要粉刷教室4周的墙壁，扣除门窗的面积16平方米，要粉刷的面积=多少平方米？",
+        "segmented_text": "教室 的 长 是 8 米 ， 宽 是 6 米 ， 高 是 3.5 米 ， 现在 要 粉刷 教室 4 周 的 墙壁 ， 扣除 门窗 的 面积 16 平方米 ， 要 粉刷 的 面积 = 多少 平方米 ？",
+        "equation": "x=(rectangle_area(8,3.5)+rectangle_area(6,3.5))*2-16",
+        "ans": "82",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=(8*3.5+6*3.5)*2-16"
+        ]
+    },
+    {
+        "id": 32,
+        "original_text": "榕欣小学校园里有一块边长9米的正方形试验田，平均每平方米收土豆1.5千克，这块试验田共收土豆多少千克？",
+        "segmented_text": "榕 欣 小学校 园里 有 一块 边长 9 米 的 正方形 试验田 ， 平均 每平方米 收 土豆 1.5 千克 ， 这块 试验田 共 收 土豆 多少 千克 ？",
+        "equation": "x=square_area(9)*1.5",
+        "ans": "121.5",
+        "knowledge": [
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=1.5*(9*9)"
+        ]
+    },
+    {
+        "id": 33,
+        "original_text": "一个正方形的边长是10厘米，如果边长减少4厘米，则它的面积减少多少平方厘米．",
+        "segmented_text": "一 个 正方形 的 边长 是 10 厘米 ， 如果 边长 减少 4 厘米 ， 则 它 的 面积 减少 多少 平方厘米 ．",
+        "equation": "x=square_area(10)-square_area((10-4))",
+        "ans": "64",
+        "knowledge": [
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=10*10-(10-4)*(10-4)"
+        ]
+    },
+    {
+        "id": 34,
+        "original_text": "甲、乙两人在500米长的环形跑道上跑步．甲以每分钟300米的速度从起点跑出1分钟时，乙从起点同向跑出，从这时起甲用了5分钟赶上乙．问：乙每分钟跑多少米？",
+        "segmented_text": "甲 、 乙 两 人 在 500 米 长 的 环形 跑道 上 跑步 ． 甲 以 每分钟 300 米 的 速度 从 起点 跑 出 1 分钟 时 ， 乙 从 起点 同 向 跑 出 ， 从这时起 甲 用 了 5 分钟 赶上 乙 ． 问 ： 乙 每分钟 跑 多少 米 ？",
+        "equation": "x=300-(500-300*1)/5",
+        "ans": "260",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 35,
+        "original_text": "一条绳子长2分米，正好可以绕着桌面围两圈，桌子的周长=多少分米．",
+        "segmented_text": "一 条 绳子 长 2 分 米 ， 正好 可以 绕 着 桌面 围 两圈 ， 桌子 的 周长 = 多少 分 米 ．",
+        "equation": "x=2/2",
+        "ans": "1",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 36,
+        "original_text": "画圆时，圆规两脚叉开的距离是2cm，画出的圆的周长=多少cm．",
+        "segmented_text": "画圆 时 ， 圆规 两 脚 叉开 的 距离 是 2cm ， 画 出 的 圆 的 周长 = 多少 cm ．",
+        "equation": "x=circumference_radius(2)",
+        "ans": "12.56",
+        "knowledge": [
+            "(circle, 2 * 3.14 * radius = circumference)"
+        ],
+        "history": [
+            "x=3.14*2*2"
+        ]
+    },
+    {
+        "id": 37,
+        "original_text": "边长是6分米的正方形纸围成一个圆柱形纸筒（接头处不计），这个纸筒的侧面积=．",
+        "segmented_text": "边长 是 6 分 米 的 正方形 纸 围成 一个 圆柱形 纸筒 （ 接头处 不计 ） ， 这个 纸筒 的 侧 面积 = ．",
+        "equation": "x=square_area(6)",
+        "ans": "36",
+        "knowledge": [
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=6*6"
+        ]
+    },
+    {
+        "id": 38,
+        "original_text": "在一个周长是42米的圆形花园周围，每隔2米放一盆花，一共可放多少盆花？",
+        "segmented_text": "在 一个 周长 是 42 米 的 圆形 花园 周围 ， 每隔 2 米 放 一 盆花 ， 一共 可 放 多少 盆花 ？",
+        "equation": "x=42/2",
+        "ans": "21",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 39,
+        "original_text": "一个圆柱的底面直径是2分米，侧面展开图是正方形，这个圆柱的侧面积=？",
+        "segmented_text": "一 个 圆柱 的 底面 直径 是 2 分 米 ， 侧面 展开 图 是 正方形 ， 这个 圆柱 的 侧 面积 = ？",
+        "equation": "x=square_area((circumference_diameter(2)))",
+        "ans": "39.4384",
+        "knowledge": [
+            "(square, side * side = area)",
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=(3.14*2)*(3.14*2)",
+            "x=square_area((3.14*2))"
+        ]
+    },
+    {
+        "id": 40,
+        "original_text": "小明家的花园近似一个圆，如果它的直径为10米，那么它的周长约=多少米．",
+        "segmented_text": "小 明 家 的 花园 近似 一个 圆 ， 如果 它 的 直径 为 10 米 ， 那么 它 的 周长 约 = 多少 米 ．",
+        "equation": "x=circumference_diameter(10)",
+        "ans": "31.4",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*10"
+        ]
+    },
+    {
+        "id": 41,
+        "original_text": "客一间会议室长10.8米，宽6米．用每块0.36平方米的方砖铺地，需要多少块这样的方砖？",
+        "segmented_text": "客 一间 会议室 长 10.8 米 ， 宽 6 米 ． 用 每块 0.36 平方米 的 方砖 铺 地 ， 需要 多少 块 这样 的 方砖 ？",
+        "equation": "x=rectangle_area(10.8,6)/0.36",
+        "ans": "180",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=10.8*6/0.36"
+        ]
+    },
+    {
+        "id": 42,
+        "original_text": "有一片长96米、宽58米的长方形阔叶林．如果每1方米阔叶林每天能制造氧气75.9克，这片阔叶林每天能制造氧气多少克？",
+        "segmented_text": "有 一片 长 96 米 、 宽 58 米 的 长方形 阔叶林 ． 如果 每 1 方 米 阔叶林 每天 能 制造 氧气 75.9 克 ， 这 片 阔叶林 每天 能 制造 氧气 多少 克 ？",
+        "equation": "x=rectangle_area(96, 58)*75.9",
+        "ans": "422611.2",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=96*58*75.9"
+        ]
+    },
+    {
+        "id": 43,
+        "original_text": "小明到商店买了2本同样的练习本，每本0.12元，又买了一支2.15元的圆珠笔．他付给营业员5元钱，应找回多少钱？",
+        "segmented_text": "小 明 到 商店 买 了 2 本 同样 的 练习本 ， 每 本 0.12 元 ， 又 买 了 一支 2.15 元 的 圆珠笔 ． 他 付给 营业员 5 元 钱 ， 应 找回 多少 钱 ？",
+        "equation": "x=5-(0.12*2+2.15)",
+        "ans": "2.61",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 44,
+        "original_text": "一个长方体的长是8厘米，高是5厘米，它的底面积是48平方厘米，那么这个长方体的体积=．",
+        "segmented_text": "一 个 长方体 的 长 是 8 厘米 ， 高 是 5 厘米 ， 它 的 底 面积 是 48 平方厘米 ， 那么 这个 长方体 的 体积 = ．",
+        "equation": "x=48*5",
+        "ans": "240",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 45,
+        "original_text": "有一个长4厘米，宽3厘米，高2厘米的长方体，它的表面积=多少平方厘米．",
+        "segmented_text": "有 一个 长 4 厘米 ， 宽 3 厘米 ， 高 2 厘米 的 长方体 ， 它 的 表面积 = 多少 平方厘米 ．",
+        "equation": "x=cuboid_surface(4, 3, 2)",
+        "ans": "52",
+        "knowledge": [
+            "(cuboid, (length * width + length * height + width * height) * 2 = surface_area)"
+        ],
+        "history": [
+            "x=(4*3+4*2+3*2)*2"
+        ]
+    },
+    {
+        "id": 46,
+        "original_text": "有一块重量为6吨的石料，如果1立方米的这种石料的重量是2.5吨，那么这块石料的体积=多少立方米．",
+        "segmented_text": "有 一块 重量 为 6 吨 的 石料 ， 如果 1 立方米 的 这种 石料 的 重量 是 2.5 吨 ， 那么 这块 石料 的 体积 = 多少 立方米 ．",
+        "equation": "x=6/2.5",
+        "ans": "2.4",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 47,
+        "original_text": "一堆成梯形摆放的钢管最下层有7根，最上层有2根，每相邻的两层都相差1根，这堆钢管共有多少根．",
+        "segmented_text": "一 堆成 梯形 摆放 的 钢管 最 下层 有 7 根 ， 最上层 有 2 根 ， 每 相邻 的 两层 都 相差 1 根 ， 这 堆 钢管 共有 多少 根 ．",
+        "equation": "x=(2+7)*(7-2+1)/2",
+        "ans": "27",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 48,
+        "original_text": "小刚和小强同时从同一点出发，沿着400米环形跑道向相反方向慢跑，小刚每分钟跑95米，小强每分钟跑105米．几分钟后两人第一次相遇？",
+        "segmented_text": "小 刚 和 小强 同时 从 同 一点 出发 ， 沿着 400 米 环形 跑道 向 相反 方向 慢跑 ， 小 刚 每分钟 跑 95 米 ， 小强 每分钟 跑 105 米 ． 几分钟 后 两 人 第一次 相遇 ？",
+        "equation": "x=400/(95+105)",
+        "ans": "2",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 49,
+        "original_text": "农场葡萄园的公顷数是苹果园面积的(4/5)，葡萄园的面积比苹果园少百分之几？",
+        "segmented_text": "农场 葡萄园 的 公顷 数 是 苹果园 面积 的 (4/5) ， 葡萄园 的 面积 比 苹果园 少 百分之几 ？",
+        "equation": "x=1-(4/5)",
+        "ans": "20%",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 50,
+        "original_text": "要挖一个蓄水量是126立方米的长方体的长方体游泳池，占地面积是63平方米，池深=多少米．",
+        "segmented_text": "要 挖 一个 蓄水量 是 126 立方米 的 长方体 的 长方体 游泳池 ， 占地面积 是 63 平方米 ， 池 深 = 多少 米 ．",
+        "equation": "x=126/63",
+        "ans": "2",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 51,
+        "original_text": "一只装有水的长方体玻璃杯，底面积是60平方厘米，水深8厘米．现将一个底面积是12平方厘米的圆柱体铁块竖放在水中后，仍有一部分铁块露在水面上，现在水深多少厘米？",
+        "segmented_text": "一 只 装有 水 的 长方体 玻璃杯 ， 底 面积 是 60 平方厘米 ， 水深 8 厘米 ． 现 将 一个 底 面积 是 12 平方厘米 的 圆柱体 铁块 竖 放在 水中 后 ， 仍 有 一部分 铁块 露 在 水面 上 ， 现在 水深 多少 厘米 ？",
+        "equation": "x=60*8/(60-12)",
+        "ans": "10",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 52,
+        "original_text": "在长12cm、宽9cm的长方形中，剪出一个最大的正方形，正方形的面积=多少cm^2．",
+        "segmented_text": "在 长 12cm 、 宽 9cm 的 长方形 中 ， 剪出 一个 最大 的 正方形 ， 正方形 的 面积 = 多少 cm ^ 2 ．",
+        "equation": "x=square_area(9)",
+        "ans": "81",
+        "knowledge": [
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=9*9"
+        ]
+    },
+    {
+        "id": 53,
+        "original_text": "小明想知道小区里一棵大树的直径，他用一条长20米的绳子围绕一棵树干绕了6圈，还余下1.16米，这棵树干的直径大约=多少米？",
+        "segmented_text": "小 明 想 知道 小区 里 一棵 大树 的 直径 ， 他 用 一条 长 20 米 的 绳子 围绕 一棵树 干 绕 了 6 圈 ， 还 余下 1.16 米 ， 这 棵 树干 的 直径 大约 = 多少 米 ？",
+        "equation": "x=(20-1.16)/6/3.14",
+        "ans": "1",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 54,
+        "original_text": "一个圆锥的体积是12立方分米，3个和它等底等高的圆柱的体积=．",
+        "segmented_text": "一 个 圆锥 的 体积 是 12 立方分米 ， 3 个 和 它 等 底 等 高 的 圆柱 的 体积 = ．",
+        "equation": "x=12*3*3",
+        "ans": "108",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 55,
+        "original_text": "一个游泳池，长50米，宽20米，深2米，现在要给游泳池的4壁和底面抹水泥，抹水泥的面积=多少平方米？",
+        "segmented_text": "一 个 游泳池 ， 长 50 米 ， 宽 20 米 ， 深 2 米 ， 现在 要 给 游泳池 的 4 壁 和 底面 抹 水泥 ， 抹 水泥 的 面积 = 多少 平方米 ？",
+        "equation": "x=cuboid_surface(50, 20, 2)-rectangle_area(50, 20)",
+        "ans": "1280",
+        "knowledge": [
+            "(cuboid, (length * width + length * height + width * height) * 2 = surface_area)",
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=(50*20+50*2+20*2)*2-50*20"
+        ]
+    },
+    {
+        "id": 56,
+        "original_text": "一个圆柱侧面展开图是正方形，它的底面直径是2分米，圆柱的高=多少分米．",
+        "segmented_text": "一 个 圆柱 侧面 展开 图 是 正方形 ， 它 的 底面 直径 是 2 分 米 ， 圆柱 的 高 = 多少 分 米 ．",
+        "equation": "x=circumference_diameter(2)",
+        "ans": "6.28",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*2"
+        ]
+    },
+    {
+        "id": 57,
+        "original_text": "一个平行四边形的面积为96平方厘米，底是12厘米，高=多少厘米．",
+        "segmented_text": "一 个 平行四边形 的 面积 为 96 平方厘米 ， 底 是 12 厘米 ， 高 = 多少 厘米 ．",
+        "equation": "x=96/12",
+        "ans": "8",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 58,
+        "original_text": "甲乙两个圆柱体容器，底面积之比是5：3，甲容器水深20厘米，乙容器水深10厘米，再往容器里注入同样多的水，使两个容器中的水深相等，这时水深多少厘米．",
+        "segmented_text": "甲乙 两个 圆柱体 容器 ， 底 面积 之 比 是 5 ： 3 ， 甲 容器 水深 20 厘米 ， 乙 容器 水深 10 厘米 ， 再 往 容器 里 注入 同样 多 的 水 ， 使 两个 容器 中 的 水深 相等 ， 这时 水深 多少 厘米 ．",
+        "equation": "x=(20-10)/(5-3)*5+10",
+        "ans": "35",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 59,
+        "original_text": "一辆自行车轮胎的直径是0.6米，如果每分钟转200圈，那么通过一座长1507.2米的大桥，需要多长时间？",
+        "segmented_text": "一 辆 自行车 轮胎 的 直径 是 0.6 米 ， 如果 每分钟 转 200 圈 ， 那么 通过 一座 长 1507.2 米 的 大桥 ， 需要 多长时间 ？",
+        "equation": "x=1507.2/(circumference_diameter(0.6)*200)",
+        "ans": "4",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=1507.2/(3.14*0.6*200)"
+        ]
+    },
+    {
+        "id": 60,
+        "original_text": "小刚和小强在400米的环形跑道上，从同一地点相背出发．小刚每秒跑4.5米，小强每秒跑5.5米，出发后多少秒两人第一次相遇？",
+        "segmented_text": "小 刚 和 小强 在 400 米 的 环形 跑道 上 ， 从 同一 地点 相 背 出发 ． 小 刚 每秒 跑 4.5 米 ， 小强 每秒 跑 5.5 米 ， 出发 后 多少 秒 两 人 第一次 相遇 ？",
+        "equation": "x=400/(5.5+4.5)",
+        "ans": "40",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 61,
+        "original_text": "在圆形操场的4周每隔3米插上彩旗，共插上80面，这个圆形操场的周长=多少米．",
+        "segmented_text": "在 圆形 操场 的 4 周 每隔 3 米 插 上 彩旗 ， 共 插 上 80 面 ， 这个 圆形 操场 的 周长 = 多少 米 ．",
+        "equation": "x=80*3",
+        "ans": "240",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 62,
+        "original_text": "一个平行四边形的面积是70平方厘米，底是10厘米，高=．",
+        "segmented_text": "一 个 平行四边形 的 面积 是 70 平方厘米 ， 底 是 10 厘米 ， 高 = ．",
+        "equation": "x=70/10",
+        "ans": "7",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 63,
+        "original_text": "把一块棱长为0.4米的正方体钢块锻造成横截面面积是0.08平方米的长方体钢材，则钢材有多长？",
+        "segmented_text": "把 一块 棱 长 为 0.4 米 的 正方体 钢 块 锻造 成 横截面 面积 是 0.08 平方米 的 长方体 钢材 ， 则 钢材 有 多长 ？",
+        "equation": "x=cubic_volume(0.4)/0.08",
+        "ans": "0.8",
+        "knowledge": [
+            "(cubic, side * side * side = area)"
+        ],
+        "history": [
+            "x=0.4*0.4*0.4/0.08"
+        ]
+    },
+    {
+        "id": 64,
+        "original_text": "把一个铁球浸没在长30cm，宽和高都是20cm的长方体容器的水中，容器的水深由8cm上升到10cm．这个铁球的体积=？",
+        "segmented_text": "把 一个 铁球 浸没 在 长 30cm ， 宽 和 高 都 是 20cm 的 长方体 容器 的 水中 ， 容器 的 水深 由 8cm 上升 到 10cm ． 这个 铁球 的 体积 = ？",
+        "equation": "x=cuboid_volume(30, 20, (10-8))",
+        "ans": "1200",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=30*20*(10-8)"
+        ]
+    },
+    {
+        "id": 65,
+        "original_text": "用一根长是10米的绳子围着一根树绕4圈，还余3.72米．这棵树的直径=多少米？",
+        "segmented_text": "用 一根 长 是 10 米 的 绳子 围着 一根 树 绕 4 圈 ， 还 余 3.72 米 ． 这 棵 树 的 直径 = 多少 米 ？",
+        "equation": "x=(10-3.72)/4/3.14",
+        "ans": "0.5",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 66,
+        "original_text": "一个车轮的直径是0.5米，它滚动一周所走的路程=多少米．",
+        "segmented_text": "一 个 车轮 的 直径 是 0.5 米 ， 它 滚动 一周 所 走 的 路程 = 多少 米 ．",
+        "equation": "x=circumference_diameter(0.5)",
+        "ans": "1.57",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*0.5"
+        ]
+    },
+    {
+        "id": 67,
+        "original_text": "一个梯形的面积是24.6cm^2，和它等高的平行四边形的底等于梯形两底之和，这个平行四边形的面积=．",
+        "segmented_text": "一 个 梯形 的 面积 是 24.6cm ^ 2 ， 和 它 等 高 的 平行四边形 的 底 等于 梯形 两 底 之 和 ， 这个 平行四边形 的 面积 = ．",
+        "equation": "x=24.6*2",
+        "ans": "49.2",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 68,
+        "original_text": "一种汽车的方向盘的直径是40cm，它的周长=．",
+        "segmented_text": "一 种 汽车 的 方向盘 的 直径 是 40cm ， 它 的 周长 = ．",
+        "equation": "x=circumference_diameter(40)",
+        "ans": "125.6",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*40"
+        ]
+    },
+    {
+        "id": 69,
+        "original_text": "从一张长20厘米，宽14厘米的长方形纸上剪下一个最大的正方形，这个正方形的面积为多少平方厘米．",
+        "segmented_text": "从 一张 长 20 厘米 ， 宽 14 厘米 的 长方形 纸 上 剪下 一个 最大 的 正方形 ， 这个 正方形 的 面积 为 多少 平方厘米 ．",
+        "equation": "x=square_area(14)",
+        "ans": "196",
+        "knowledge": [
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=14*14"
+        ]
+    },
+    {
+        "id": 70,
+        "original_text": "一个圆形水池周围每隔2米栽一棵杨树，共栽了40棵，水池的周长=多少米．",
+        "segmented_text": "一 个 圆形 水池 周围 每隔 2 米 栽 一棵 杨树 ， 共 栽 了 40 棵 ， 水池 的 周长 = 多少 米 ．",
+        "equation": "x=40*2",
+        "ans": "80",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 71,
+        "original_text": "长方形的长是8cm，宽比长短2cm，这个长方形的周长=．",
+        "segmented_text": "长方形 的 长 是 8cm ， 宽比 长短 2cm ， 这个 长方形 的 周长 = ．",
+        "equation": "x=rectangle_perimeter(8, 8-2)",
+        "ans": "28",
+        "knowledge": [
+            "(rectangle, (length + width) * 2 = perimeter)"
+        ],
+        "history": [
+            "x=(8+8-2)*2"
+        ]
+    },
+    {
+        "id": 72,
+        "original_text": "一个游泳池，长50米，宽12米，深2.5米．注满水后一共可装水多少立方米？",
+        "segmented_text": "一 个 游泳池 ， 长 50 米 ， 宽 12 米 ， 深 2.5 米 ． 注满 水 后 一共 可 装 水 多少 立方米 ？",
+        "equation": "x=cuboid_volume(50, 12, 2.5)",
+        "ans": "1500",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=50*12*2.5"
+        ]
+    },
+    {
+        "id": 73,
+        "original_text": "一个长20厘米，宽15厘米，高16厘米的长方体水槽中装满了水，放入一石块浸没后溢出了一些水，再把石块拿出，水位下降了4厘米．求石块的体积．",
+        "segmented_text": "一 个 长 20 厘米 ， 宽 15 厘米 ， 高 16 厘米 的 长方体 水槽 中 装满 了 水 ， 放入 一 石块 浸没 后 溢出 了 一些 水 ， 再 把 石块 拿出 ， 水位 下降 了 4 厘米 ． 求 石块 的 体积 ．",
+        "equation": "x=cuboid_volume(20, 15, 4)",
+        "ans": "1200",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=20*15*4"
+        ]
+    },
+    {
+        "id": 74,
+        "original_text": "一个平行四边形和一个三角形等底等高．已知平行四边形的面积是16dm^2，三角形的面积=多少平方分米．",
+        "segmented_text": "一 个 平行四边形 和 一个 三角形 等 底 等 高 ． 已知 平行四边形 的 面积 是 16dm ^ 2 ， 三角形 的 面积 = 多少 平方分米 ．",
+        "equation": "x=16/2",
+        "ans": "8",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 75,
+        "original_text": "一块正方体的钢锭，棱长是10分米，如果1立方分米的钢重7.8千克，这块钢锭重多少千克．",
+        "segmented_text": "一 块 正方体 的 钢锭 ， 棱 长 是 10 分 米 ， 如果 1 立方分米 的 钢 重 7.8 千克 ， 这块 钢锭 重 多少 千克 ．",
+        "equation": "x=cubic_volume(10)*7.8",
+        "ans": "7800",
+        "knowledge": [
+            "(cubic, side * side * side = area)"
+        ],
+        "history": [
+            "x=10*10*10*7.8"
+        ]
+    },
+    {
+        "id": 76,
+        "original_text": "上海市的面积5800平方千米，比北京市小12000平方千米．北京市的面积=多少平方千米？",
+        "segmented_text": "上海市 的 面积 5800 平方千米 ， 比 北京市 小 12000 平方千米 ． 北京市 的 面积 = 多少 平方千米 ？",
+        "equation": "x=5800+12000",
+        "ans": "17800",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 77,
+        "original_text": "某长方体的长是6厘米，宽4厘米，高3厘米，这个长方体的棱长=多少厘米．",
+        "segmented_text": "某 长方体 的 长 是 6 厘米 ， 宽 4 厘米 ， 高 3 厘米 ， 这个 长方体 的 棱 长 = 多少 厘米 ．",
+        "equation": "x=(6+4+3)*4",
+        "ans": "52",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 78,
+        "original_text": "在一个底面长为20cm，宽15cm的水箱中，水面高度为10cm，放入一块铁块，水面上升到17cm，则这块铁块的体积=？",
+        "segmented_text": "在 一个 底面 长 为 20cm ， 宽 15cm 的 水箱 中 ， 水面 高度 为 10cm ， 放入 一块 铁块 ， 水面 上升 到 17cm ， 则 这块 铁块 的 体积 = ？",
+        "equation": "x=cuboid_volume(20, 15, (17-10))",
+        "ans": "2100",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=20*15*(17-10)"
+        ]
+    },
+    {
+        "id": 79,
+        "original_text": "学校会议室长12米，宽8米．一共铺了384块地砖，平均每平方米铺了多少块地砖？",
+        "segmented_text": "学校 会议室 长 12 米 ， 宽 8 米 ． 一共 铺 了 384 块 地砖 ， 平均 每平方米 铺 了 多少 块 地砖 ？",
+        "equation": "x=384/rectangle_area(12, 8)",
+        "ans": "4",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=384/(12*8)"
+        ]
+    },
+    {
+        "id": 80,
+        "original_text": "一个平行四边形的面积是42平方米，它的高是6米，它的底为多少米．",
+        "segmented_text": "一 个 平行四边形 的 面积 是 42 平方米 ， 它 的 高 是 6 米 ， 它 的 底 为 多少 米 ．",
+        "equation": "x=42/6",
+        "ans": "7",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 81,
+        "original_text": "某湖泊的最宽处约4400m，是长的(11/20)，该湖泊的长约=多少米？",
+        "segmented_text": "某 湖泊 的 最 宽 处 约 4400m ， 是 长 的 (11/20) ， 该 湖泊 的 长 约 = 多少 米 ？",
+        "equation": "x=4400/(11/20)",
+        "ans": "8000",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 82,
+        "original_text": "一根圆形柱子的周长是6.28米，这根柱子的直径=多少米？",
+        "segmented_text": "一 根 圆形 柱子 的 周长 是 6.28 米 ， 这根 柱子 的 直径 = 多少 米 ？",
+        "equation": "x=6.28/3.14",
+        "ans": "2",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 83,
+        "original_text": "水结成冰后体积增大(1/10)，一桶30升的水完全结冰后，体积有多少立方分米？",
+        "segmented_text": "水 结成 冰 后 体积 增大 (1/10) ， 一桶 30 升 的 水 完全 结冰 后 ， 体积 有 多少 立方分米 ？",
+        "equation": "x=30*(1+(1/10))",
+        "ans": "33",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 84,
+        "original_text": "一个棱长为6cm的正方体纸盒，它的体积=．",
+        "segmented_text": "一 个 棱 长 为 6cm 的 正方体 纸盒 ， 它 的 体积 = ．",
+        "equation": "x=cubic_volume(6)",
+        "ans": "216",
+        "knowledge": [
+            "(cubic, side * side * side = area)"
+        ],
+        "history": [
+            "x=6*6*6"
+        ]
+    },
+    {
+        "id": 85,
+        "original_text": "3支钢笔的价钱与6支圆珠笔的价钱相等．每支钢笔8元，每支圆珠笔多少元？",
+        "segmented_text": "3 支 钢笔 的 价钱 与 6 支 圆珠笔 的 价钱 相等 ． 每支 钢笔 8 元 ， 每支 圆珠笔 多少 元 ？",
+        "equation": "x=8*3/6",
+        "ans": "4",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 86,
+        "original_text": "用木料做一个长5厘米，宽和高都是4厘米的长方体，至少需要多少立方厘米的木料．",
+        "segmented_text": "用 木料 做 一个 长 5 厘米 ， 宽 和 高 都 是 4 厘米 的 长方体 ， 至少 需要 多少 立方厘米 的 木料 ．",
+        "equation": "x=cuboid_volume(5, 4, 4)",
+        "ans": "80",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=5*4*4"
+        ]
+    },
+    {
+        "id": 87,
+        "original_text": "一个底面半径2cm，高10cm的圆柱的表面积=多少平方厘米．",
+        "segmented_text": "一 个 底面 半径 2cm ， 高 10cm 的 圆柱 的 表面积 = 多少 平方厘米 ．",
+        "equation": "x=circle_area(2)*2+circumference_radius(2)*10",
+        "ans": "150.72",
+        "knowledge": [
+            "(circle, 3.14 * radius^2 = area)",
+            "(circle, 2 * 3.14 * radius = circumference)"
+        ],
+        "history": [
+            "x=3.14*2^2*2+2*3.14*2*10",
+            "x=circle_area(2)*2+2*3.14*2*10"
+        ]
+    },
+    {
+        "id": 88,
+        "original_text": "商店为了搬运方便，把4瓶啤酒捆在一起，啤酒瓶的外直径为10厘米，用绳子捆一周，至少要用多长的绳子？",
+        "segmented_text": "商店 为了 搬运 方便 ， 把 4 瓶 啤酒 捆 在 一起 ， 啤酒瓶 的 外 直径 为 10 厘米 ， 用 绳子 捆 一周 ， 至少 要 用 多长 的 绳子 ？",
+        "equation": "x=10*4+circumference_diameter(10)",
+        "ans": "71.4",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=10*4+3.14*10"
+        ]
+    },
+    {
+        "id": 89,
+        "original_text": "一个圆环的外圆半径是2厘米，内圆半径是1厘米，那么圆环的面积=多少平方厘米．",
+        "segmented_text": "一 个 圆环 的 外 圆 半径 是 2 厘米 ， 内 圆 半径 是 1 厘米 ， 那么 圆环 的 面积 = 多少 平方厘米 ．",
+        "equation": "x=circle_area(2) - circle_area(1)",
+        "ans": "9.42",
+        "knowledge": [
+            "(circle, 3.14 * radius^2 = area)"
+        ],
+        "history": [
+            "x=3.14*(2^2-1^2)"
+        ]
+    },
+    {
+        "id": 90,
+        "original_text": "5支钢笔比8支圆珠笔贵5.4元，每支圆珠笔的价钱是1.2元，每支钢笔多少元？",
+        "segmented_text": "5 支 钢笔 比 8 支 圆珠笔 贵 5.4 元 ， 每支 圆珠笔 的 价钱 是 1.2 元 ， 每支 钢笔 多少 元 ？",
+        "equation": "x=(8*1.2+5.4)/5",
+        "ans": "3",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 91,
+        "original_text": "篮球场长28米，宽16米，每隔2米摆一盆花（4个角都要摆）．一共要摆多少盆花？",
+        "segmented_text": "篮球场 长 28 米 ， 宽 16 米 ， 每隔 2 米 摆 一 盆花 （ 4 个 角 都 要 摆 ） ． 一共 要 摆 多少 盆花 ？",
+        "equation": "x=rectangle_perimeter(28, 16)/2",
+        "ans": "44",
+        "knowledge": [
+            "(rectangle, (length + width) * 2 = perimeter)"
+        ],
+        "history": [
+            "x=(28+16)*2/2"
+        ]
+    },
+    {
+        "id": 92,
+        "original_text": "制作一个底面直径为30厘米，长60厘米的圆柱形通风管，至少要用多少平方厘米的铁皮？",
+        "segmented_text": "制作 一个 底面 直径 为 30 厘米 ， 长 60 厘米 的 圆柱形 通风管 ， 至少 要 用 多少 平方厘米 的 铁皮 ？",
+        "equation": "x=circumference_diameter(30)*60",
+        "ans": "5652",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*30*60"
+        ]
+    },
+    {
+        "id": 93,
+        "original_text": "一个圆柱体茶叶罐，底面半径是4.5厘米，高是10厘米，在它的侧面贴上商标纸，商标纸至少=多少厘米^2．",
+        "segmented_text": "一 个 圆柱体 茶叶罐 ， 底面 半径 是 4.5 厘米 ， 高 是 10 厘米 ， 在 它 的 侧面 贴 上 商标纸 ， 商标纸 至少 = 多少 厘米 ^ 2 ．",
+        "equation": "x=circumference_radius(4.5)*10",
+        "ans": "282.6",
+        "knowledge": [
+            "(circle, 2 * 3.14 * radius = circumference)"
+        ],
+        "history": [
+            "x=3.14*4.5*2*10"
+        ]
+    },
+    {
+        "id": 94,
+        "original_text": "从一个边长是4cm的正方形里剪下一个最大的圆，剩下的面积=多少cm^2．",
+        "segmented_text": "从 一个 边长 是 4cm 的 正方形 里 剪下 一个 最大 的 圆 ， 剩下 的 面积 = 多少 cm ^ 2 ．",
+        "equation": "x=square_area(4)-circle_area(4/2)",
+        "ans": "3.44",
+        "knowledge": [
+            "(square, side * side = area)",
+            "(circle, 3.14 * radius^2 = area)"
+        ],
+        "history": [
+            "x=4*4-3.14*(4/2)^2",
+            "x=square_area(4)-3.14*(4/2)^2"
+        ]
+    },
+    {
+        "id": 95,
+        "original_text": "用一根52厘米长的木条，恰好可以做一个长6厘米，宽4厘米，高多少厘米的长方体木框．",
+        "segmented_text": "用 一根 52 厘米 长 的 木条 ， 恰好 可以 做 一个 长 6 厘米 ， 宽 4 厘米 ， 高 多少 厘米 的 长方体 木框 ．",
+        "equation": "x=52/4-(6+4)",
+        "ans": "3",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 96,
+        "original_text": "方方和圆圆用同一个数做除法，方方用12去除，圆圆用15去除，方方除得的商是32还余6．圆圆计算的结果应该=？",
+        "segmented_text": "方方 和 圆圆 用 同一个 数 做 除法 ， 方方 用 12 去除 ， 圆圆 用 15 去除 ， 方方 除 得 的 商 是 32 还 余 6 ． 圆圆 计算 的 结果 应该 = ？",
+        "equation": "x=(32*12+6)/15",
+        "ans": "26",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 97,
+        "original_text": "用一台抽水机往空池内注水，上午4小时注入的占水池容积的(8/21)，下午又注入58.5立方米的水，正好注满．这个水池的容积=？",
+        "segmented_text": "用 一台 抽水机 往 空 池内 注水 ， 上午 4 小时 注入 的 占 水池 容积 的 (8/21) ， 下午 又 注入 58.5 立方米 的 水 ， 正好 注满 ． 这个 水池 的 容积 = ？",
+        "equation": "x=58.5/(1-(8/21))",
+        "ans": "94.5",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 98,
+        "original_text": "一个梯形的面积是70cm^2，上底是4cm，下底是6cm，这个梯形的高=．",
+        "segmented_text": "一 个 梯形 的 面积 是 70cm ^ 2 ， 上 底 是 4cm ， 下 底 是 6cm ， 这个 梯形 的 高 = ．",
+        "equation": "x=70*2/(4+6)",
+        "ans": "14",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 99,
+        "original_text": "一批圆珠笔，如果每袋装6支，可以装36袋．如果每袋装4支，可以装多少袋？",
+        "segmented_text": "一 批 圆珠笔 ， 如果 每 袋装 6 支 ， 可以 装 36 袋 ． 如果 每 袋装 4 支 ， 可以 装 多少 袋 ？",
+        "equation": "x=36*6/4",
+        "ans": "54",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 100,
+        "original_text": "实验小学的环形跑道一圈是300米．张宇在这个跑道上跑3圈用了6分，平均每分跑多少米？",
+        "segmented_text": "实验 小学 的 环形 跑道 一圈 是 300 米 ． 张 宇 在 这个 跑道 上 跑 3 圈 用 了 6 分 ， 平均 每 分 跑 多少 米 ？",
+        "equation": "x=300*3/6",
+        "ans": "150",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 101,
+        "original_text": "一套住房面积是126平方米，客厅面积大约占住房的(1/6)，卧室占整套住房的(2/7)，卧室比客厅大多少平方米？",
+        "segmented_text": "一 套 住房面积 是 126 平方米 ， 客厅 面积 大约 占 住房 的 (1/6) ， 卧室 占 整套 住房 的 (2/7) ， 卧室 比 客厅 大 多少 平方米 ？",
+        "equation": "x=126*((2/7)-(1/6))",
+        "ans": "15",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 102,
+        "original_text": "一个无盖的长方体铁盒，底面是边长为3分米的正方形，高4分米；做这个铁盒至少要用铁皮多少平方分米？",
+        "segmented_text": "一 个 无盖 的 长方体 铁盒 ， 底面 是 边长 为 3 分 米 的 正方形 ， 高 4 分 米 ； 做 这个 铁盒 至少 要 用 铁皮 多少 平方分米 ？",
+        "equation": "x=cuboid_surface(3, 3, 4)-square_area(3)",
+        "ans": "57",
+        "knowledge": [
+            "(cuboid, (length * width + length * height + width * height) * 2 = surface_area)",
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=3*3+3*4*4"
+        ]
+    },
+    {
+        "id": 103,
+        "original_text": "一个三角形与一个平行四边形的面积相等．三角形的面积是35平方厘米，平行四边形的高是7厘米，底=多少厘米．",
+        "segmented_text": "一 个 三角形 与 一个 平行四边形 的 面积 相等 ． 三角形 的 面积 是 35 平方厘米 ， 平行四边形 的 高 是 7 厘米 ， 底 = 多少 厘米 ．",
+        "equation": "x=35/7",
+        "ans": "5",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 104,
+        "original_text": "在通常情况下，体积相等的冰的质量比水的质量少(1/10)．现有一块重18千克的冰，如果有一桶水的体积和这块冰的体积相等，这桶水有多重？",
+        "segmented_text": "在 通常 情况 下 ， 体积 相等 的 冰 的 质量 比 水 的 质量 少 (1/10) ． 现有 一块 重 18 千克 的 冰 ， 如果 有 一桶 水 的 体积 和 这 块冰 的 体积 相等 ， 这 桶 水 有 多重 ？",
+        "equation": "x=18/(1-(1/10))",
+        "ans": "20",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 105,
+        "original_text": "学校有个长方体的沙坑，用5.76立方米的黄沙正好把它填满，测得这个沙坑的长是3.6米，宽是2米，这个沙坑深多少米？",
+        "segmented_text": "学校 有 个 长方体 的 沙坑 ， 用 5.76 立方米 的 黄沙 正好 把 它 填满 ， 测 得 这个 沙坑 的 长 是 3.6 米 ， 宽 是 2 米 ， 这个 沙坑 深 多少 米 ？",
+        "equation": "x=5.76/rectangle_area(3.6, 2)",
+        "ans": "0.8",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=5.76/(3.6*2)"
+        ]
+    },
+    {
+        "id": 106,
+        "original_text": "一个平行四边形的面积是3.5dm^2，底是1.4dm，它的高=多少dm．",
+        "segmented_text": "一 个 平行四边形 的 面积 是 3.5dm ^ 2 ， 底 是 1.4dm ， 它 的 高 = 多少 dm ．",
+        "equation": "x=3.5/1.4",
+        "ans": "2.5",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 107,
+        "original_text": "小明一不小心把一个长8分米，宽6分米，深4分米的长方体玻璃鱼缸的前面玻璃碰坏了，现在要修补这个鱼缸，应配上一块面积=多少平方分米的玻璃．",
+        "segmented_text": "小 明 一不小心 把 一个 长 8 分 米 ， 宽 6 分 米 ， 深 4 分 米 的 长方体 玻璃 鱼缸 的 前面 玻璃 碰坏 了 ， 现在 要 修补 这个 鱼缸 ， 应 配 上 一块 面积 = 多少 平方分米 的 玻璃 ．",
+        "equation": "x=rectangle_area(8, 4)",
+        "ans": "32",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=8*4"
+        ]
+    },
+    {
+        "id": 108,
+        "original_text": "一个等腰三角形周长为60厘米，它的两条边的比为2：5，则这个三角形的腰长多少．",
+        "segmented_text": "一 个 等腰三角 形 周长 为 60 厘米 ， 它 的 两条 边 的 比 为 2 ： 5 ， 则 这个 三角形 的 腰 长 多少 ．",
+        "equation": "x=60*(5/(2+5+5))",
+        "ans": "25",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 109,
+        "original_text": "网络公司为某花园小区安装宽带网络线，已经安装了250户，还有(6/11)没有安装，这个花园小区一共有多少户居民？",
+        "segmented_text": "网络 公司 为 某 花园 小区 安装 宽带 网络线 ， 已经 安装 了 250 户 ， 还有 (6/11) 没有 安装 ， 这个 花园 小区 一共 有 多少 户 居民 ？",
+        "equation": "x=250/(1-(6/11))",
+        "ans": "550",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 110,
+        "original_text": "长方体的长、宽、高分别是7cm、6cm、3cm，它的表面积=多少cm^2．",
+        "segmented_text": "长方体 的 长 、 宽 、 高 分别 是 7cm 、 6cm 、 3cm ， 它 的 表面积 = 多少 cm ^ 2 ．",
+        "equation": "x=cuboid_surface(7, 6, 3)",
+        "ans": "162",
+        "knowledge": [
+            "(cuboid, (length * width + length * height + width * height) * 2 = surface_area)"
+        ],
+        "history": [
+            "x=(7*6+7*3+6*3)*2"
+        ]
+    },
+    {
+        "id": 111,
+        "original_text": "用一根铁丝围成一个边长是8cm的正方形，如果把它拉成一个平行四边形，面积就减少12cm^2，拉成的平行四边形的高=多少cm．",
+        "segmented_text": "用 一根 铁丝 围成 一个 边长 是 8cm 的 正方形 ， 如果 把 它 拉 成 一个 平行四边形 ， 面积 就 减少 12cm ^ 2 ， 拉 成 的 平行四边形 的 高 = 多少 cm ．",
+        "equation": "x=(square_area(8)-12)/8",
+        "ans": "6.5",
+        "knowledge": [
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=(8*8-12)/8"
+        ]
+    },
+    {
+        "id": 112,
+        "original_text": "甲、乙两个圆柱形容器，底面积比为6：3，甲容器水深20厘米，乙容器水深10厘米，再往两个容器中注入同样多的水，使得两个容器中的水深相等，这时水深多少厘米．",
+        "segmented_text": "甲 、 乙 两个 圆柱形 容器 ， 底 面积 比 为 6 ： 3 ， 甲 容器 水深 20 厘米 ， 乙 容器 水深 10 厘米 ， 再 往 两个 容器 中 注入 同样 多 的 水 ， 使得 两个 容器 中 的 水深 相等 ， 这时 水深 多少 厘米 ．",
+        "equation": "x=(20-10)/(6-3)*6+10",
+        "ans": "30",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 113,
+        "original_text": "一个等腰三角形，其中的两条边分别是6厘米和15厘米，这个三角形的周长=多少厘米．",
+        "segmented_text": "一 个 等腰三角 形 ， 其中 的 两条 边 分别 是 6 厘米 和 15 厘米 ， 这个 三角形 的 周长 = 多少 厘米 ．",
+        "equation": "x=15+15+6",
+        "ans": "36",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 114,
+        "original_text": "在一张长18厘米，宽12厘米的长方形纸片上剪一个最大的正方形，剪去的纸片面积=．",
+        "segmented_text": "在 一张 长 18 厘米 ， 宽 12 厘米 的 长方形 纸片 上 剪 一个 最大 的 正方形 ， 剪 去 的 纸片 面积 = ．",
+        "equation": "x=rectangle_area(18, 12)-square_area(12)",
+        "ans": "72",
+        "knowledge": [
+            "(rectangle, length * width = area)",
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=12*(18-12)"
+        ]
+    },
+    {
+        "id": 115,
+        "original_text": "一个棱长4分米的正方体水箱装满水，如果把这箱水倒入另一个长8分米，宽2.5分米的长方体水箱中，水深=？",
+        "segmented_text": "一 个 棱 长 4 分 米 的 正方体 水箱 装满水 ， 如果 把 这 箱 水 倒入 另 一个 长 8 分 米 ， 宽 2.5 分 米 的 长方体 水箱 中 ， 水深 = ？",
+        "equation": "x=cubic_volume(4)/rectangle_area(8, 2.5)",
+        "ans": "3.2",
+        "knowledge": [
+            "(cubic, side * side * side = area)",
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=4*4*4/(8*2.5)",
+            "x=cubic_volume(4)/(8*2.5)"
+        ]
+    },
+    {
+        "id": 116,
+        "original_text": "把一个棱长为12厘米的正方体钢坯锻造成高和宽都是4厘米的长方体的钢材，长=多少厘米？",
+        "segmented_text": "把 一个 棱 长 为 12 厘米 的 正方体 钢坯 锻造 成 高 和 宽 都 是 4 厘米 的 长方体 的 钢材 ， 长 = 多少 厘米 ？",
+        "equation": "x=cubic_volume(12)/rectangle_area(4, 4)",
+        "ans": "108",
+        "knowledge": [
+            "(cubic, side * side * side = area)",
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=12*12*12/(4*4)",
+            "x=cubic_volume(12)/(4*4)"
+        ]
+    },
+    {
+        "id": 117,
+        "original_text": "大厅里有4根圆柱，每根底面直径为1米，高为8米．在这些圆柱的表面涂油漆，平均每平方米用油漆0.8千克，共需油漆多少千克？",
+        "segmented_text": "大厅 里 有 4 根 圆柱 ， 每 根 底面 直径 为 1 米 ， 高 为 8 米 ． 在 这些 圆柱 的 表面 涂 油漆 ， 平均 每平方米 用 油漆 0.8 千克 ， 共 需 油漆 多少 千克 ？",
+        "equation": "x=(circumference_diameter(1)*8)*0.8*4",
+        "ans": "80.384",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=(3.14*1*8)*0.8*4"
+        ]
+    },
+    {
+        "id": 118,
+        "original_text": "我国是世界上13个贫水国家之一，水资源人均占有量只有2300立方米，约为世界人均水平的(1/4)，世界水资源人均占有量=？",
+        "segmented_text": "我国 是 世界 上 13 个 贫 水 国家 之一 ， 水资源 人均 占有量 只有 2300 立方米 ， 约 为 世界 人均 水平 的 (1/4) ， 世界 水资源 人均 占有量 = ？",
+        "equation": "x=2300/(1/4)",
+        "ans": "9200",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 119,
+        "original_text": "一个平行四边形的面积是33.6平方厘米，其底边长是8.4厘米，那么它的高=多少厘米．",
+        "segmented_text": "一 个 平行四边形 的 面积 是 33.6 平方厘米 ， 其 底边 长 是 8.4 厘米 ， 那么 它 的 高 = 多少 厘米 ．",
+        "equation": "x=33.6/8.4",
+        "ans": "4",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 120,
+        "original_text": "一个用塑料薄膜覆盖的蔬菜大棚，长15米，横截面是一个半径2米的半圆．大棚内的空间大约有多大？",
+        "segmented_text": "一 个 用 塑料薄膜 覆盖 的 蔬菜 大棚 ， 长 15 米 ， 横截面 是 一个 半径 2 米 的 半圆 ． 大棚 内 的 空间 大约 有 多 大 ？",
+        "equation": "x=circle_area(2)*15/2",
+        "ans": "94.2",
+        "knowledge": [
+            "(circle, 3.14 * radius^2 = area)"
+        ],
+        "history": [
+            "x=3.14*2^2*15/2"
+        ]
+    },
+    {
+        "id": 121,
+        "original_text": "学校运来2立方米的黄沙，把它铺在长8米，宽1.25米的长方形沙坑里，能铺多厚？",
+        "segmented_text": "学校 运 来 2 立方米 的 黄沙 ， 把 它 铺 在 长 8 米 ， 宽 1.25 米 的 长方形 沙坑 里 ， 能 铺 多 厚 ？",
+        "equation": "x=2/rectangle_area(8, 1.25)",
+        "ans": "0.2",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=2/(8*1.25)"
+        ]
+    },
+    {
+        "id": 122,
+        "original_text": "做5根长2米，管口直径是0.2米的通风管，至少需要铁皮多少平方米．",
+        "segmented_text": "做 5 根 长 2 米 ， 管 口 直径 是 0.2 米 的 通风管 ， 至少 需要 铁皮 多少 平方米 ．",
+        "equation": "x=circumference_diameter(0.2)*2*5",
+        "ans": "6.28",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*0.2*2*5"
+        ]
+    },
+    {
+        "id": 123,
+        "original_text": "买一支圆珠笔3元钱，钢笔的价钱是圆珠笔的6倍，买一支钢笔多少钱？",
+        "segmented_text": "买 一支 圆珠笔 3 元 钱 ， 钢笔 的 价钱 是 圆珠笔 的 6 倍 ， 买 一支 钢笔 多少 钱 ？",
+        "equation": "x=3*6",
+        "ans": "18",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 124,
+        "original_text": "买一枝圆珠笔和一枝钢笔共需要25元，买一枝圆珠笔需要2.65元，一枝钢笔比一枝圆珠笔贵多少元．",
+        "segmented_text": "买 一枝 圆珠笔 和 一枝 钢笔 共 需要 25 元 ， 买 一枝 圆珠笔 需要 2.65 元 ， 一枝 钢笔 比 一枝 圆珠笔 贵 多少 元 ．",
+        "equation": "x=25-2.65-2.65",
+        "ans": "19.7",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 125,
+        "original_text": "一个长方体油箱，从里面量得它的长是8分米，宽是5分米，高是4分米．如果每升柴油重0.85千克，这个油箱最多可装柴油多少千克？",
+        "segmented_text": "一 个 长方体 油箱 ， 从 里面 量 得 它 的 长 是 8 分 米 ， 宽 是 5 分 米 ， 高 是 4 分 米 ． 如果 每 升 柴油 重 0.85 千克 ， 这个 油箱 最 多 可 装 柴油 多少 千克 ？",
+        "equation": "x=cuboid_volume(8, 5, 4)*0.85",
+        "ans": "136",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=(8*5*4)*0.85"
+        ]
+    },
+    {
+        "id": 126,
+        "original_text": "盒中有4个黄球、3个红球（黄球与红球的大小、形状一样），从中任意摸一个球，摸出黄的可能性=．",
+        "segmented_text": "盒 中 有 4 个 黄 球 、 3 个 红球 （ 黄 球 与 红球 的 大小 、 形状 一样 ） ， 从中 任意 摸 一个 球 ， 摸 出 黄 的 可能性 = ．",
+        "equation": "x=4/(4+3)",
+        "ans": "((4)/(7))",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 127,
+        "original_text": "要修建一个长18米，宽10米，深2米的游泳池，如果要在游泳池的4壁和底面抹上一层水泥，抹水泥的面积=多少平方米？",
+        "segmented_text": "要 修建 一个 长 18 米 ， 宽 10 米 ， 深 2 米 的 游泳池 ， 如果 要 在 游泳池 的 4 壁 和 底面 抹 上 一层 水泥 ， 抹 水泥 的 面积 = 多少 平方米 ？",
+        "equation": "x=cuboid_surface(18, 10, 2)-rectangle_area(18, 10)",
+        "ans": "292",
+        "knowledge": [
+            "(cuboid, (length * width + length * height + width * height) * 2 = surface_area)",
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=18*10+18*2*2+10*2*2"
+        ]
+    },
+    {
+        "id": 128,
+        "original_text": "某影院放映《变形金刚2》的第一场共卖出525张票，每张票价55元，则这一场门票一共收了多少钱？",
+        "segmented_text": "某 影院 放映 《 变形金刚 2 》 的 第一场 共 卖出 525 张 票 ， 每张 票价 55 元 ， 则 这 一场 门票 一共 收 了 多少 钱 ？",
+        "equation": "x=525*55",
+        "ans": "28875",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 129,
+        "original_text": "一枝钢笔5.5元，比一枝圆珠笔贵2.15元，张老师买了一枝钢笔和一枝圆珠笔，付给售货员20元，应找回多少元？",
+        "segmented_text": "一 枝 钢笔 5.5 元 ， 比 一枝 圆珠笔 贵 2.15 元 ， 张老师 买 了 一枝 钢笔 和 一枝 圆珠笔 ， 付给 售货员 20 元 ， 应 找回 多少 元 ？",
+        "equation": "x=20-(5.5-2.15+5.5)",
+        "ans": "11.15",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 130,
+        "original_text": "第29届北京奥运会的主会场-鸟巢建筑面积是25.8公顷，比天安门广场建筑面积小18.2公顷，天安门广场的建筑面积有多大？",
+        "segmented_text": "第 29 届 北京 奥运会 的 主会场 - 鸟巢 建筑面积 是 25.8 公顷 ， 比 天安门广场 建筑面积 小 18.2 公顷 ， 天安门广场 的 建筑面积 有 多 大 ？",
+        "equation": "x=25.8+18.2",
+        "ans": "44",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 131,
+        "original_text": "大酒店门前有一根圆形柱子，量得它的周长是31.4分米，这根柱子的直径=多少分米？",
+        "segmented_text": "大酒店 门前 有 一根 圆形 柱子 ， 量 得 它 的 周长 是 31.4 分 米 ， 这根 柱子 的 直径 = 多少 分 米 ？",
+        "equation": "x=31.4/3.14",
+        "ans": "10",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 132,
+        "original_text": "商店里有圆珠笔72盒，钢笔的盒数是圆珠笔的(7/9)．铅笔的盒数是钢笔的(11/8)．商店里有铅笔多少盒？",
+        "segmented_text": "商店 里 有 圆珠笔 72 盒 ， 钢笔 的 盒 数 是 圆珠笔 的 (7/9) ． 铅笔 的 盒 数 是 钢笔 的 (11/8) ． 商店 里 有 铅笔 多少 盒 ？",
+        "equation": "x=72*(7/9)*(11/8)",
+        "ans": "77",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 133,
+        "original_text": "在400米长的环形跑道上，甲、乙两人同时同地同向出发跑步，若甲每分钟跑320米，乙每分钟跑300米，多长时间两人第一次相遇？",
+        "segmented_text": "在 400 米 长 的 环形 跑道 上 ， 甲 、 乙 两 人 同时 同 地 同 向 出发 跑步 ， 若 甲 每分钟 跑 320 米 ， 乙 每分钟 跑 300 米 ， 多长时间 两 人 第一次 相遇 ？",
+        "equation": "x=400/(320-300)",
+        "ans": "20",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 134,
+        "original_text": "一根长方体木料，长8m，横截面的面积是0.09m2，这根木料的体积=．",
+        "segmented_text": "一 根 长方体 木料 ， 长 8m ， 横截面 的 面积 是 0.09m2 ， 这根 木料 的 体积 = ．",
+        "equation": "x=0.09*8",
+        "ans": "0.72",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 135,
+        "original_text": "在一个环形跑道上每隔4米插上一面红旗，共插了100面，这个跑道的一周有多少米？",
+        "segmented_text": "在 一个 环形 跑道 上 每隔 4 米 插 上 一面 红旗 ， 共 插 了 100 面 ， 这个 跑道 的 一周 有 多少 米 ？",
+        "equation": "x=4*100",
+        "ans": "400",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 136,
+        "original_text": "有一个正方体，其中3面涂成绿色，2面涂成蓝色．1面涂成红色．抛了9次，发现有8次是绿色的面朝上．现在抛第10次．朝上的面是绿色的可能性为多少．",
+        "segmented_text": "有 一个 正方体 ， 其中 3 面 涂成 绿色 ， 2 面 涂成 蓝色 ． 1 面 涂成 红色 ． 抛 了 9 次 ， 发现 有 8 次 是 绿色 的 面朝 上 ． 现在 抛 第 10 次 ． 朝 上 的 面 是 绿色 的 可能性 为 多少 ．",
+        "equation": "x=3/(3+2+1)",
+        "ans": "((1)/(2))",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 137,
+        "original_text": "梯形的上底是5分米，下底是8分米，高是上底的2倍，它的面积多少平方分米．",
+        "segmented_text": "梯形 的 上 底 是 5 分 米 ， 下 底 是 8 分 米 ， 高 是 上 底 的 2 倍 ， 它 的 面积 多少 平方分米 ．",
+        "equation": "x=(5+8)*(5*2)/2",
+        "ans": "65",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 138,
+        "original_text": "一个高为4.4cm的直角梯形，把它的下底减少1.2cm就变成了一个正方形，这个梯形的面积=多少cm^2．",
+        "segmented_text": "一 个 高 为 4.4cm 的 直角 梯形 ， 把 它 的 下 底 减少 1.2cm 就 变成 了 一个 正方形 ， 这个 梯形 的 面积 = 多少 cm ^ 2 ．",
+        "equation": "x=(4.4+4.4+1.2)*4.4/2",
+        "ans": "22",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 139,
+        "original_text": "3.14与268的和乘7=？",
+        "segmented_text": "3.14 与 268 的 和 乘 7 = ？",
+        "equation": "x=(3.14+268)*7",
+        "ans": "1897.98",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 140,
+        "original_text": "水凝结成冰后，冰的体积比水的体积增加(1/10)．3.3立方分米的水凝结成冰后，冰的体积=多少立方分米？",
+        "segmented_text": "水 凝结 成 冰 后 ， 冰 的 体积 比 水 的 体积 增加 (1/10) ． 3.3 立方分米 的 水 凝结 成 冰 后 ， 冰 的 体积 = 多少 立方分米 ？",
+        "equation": "x=3.3*(1+(1/10))",
+        "ans": "3.63",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 141,
+        "original_text": "聪聪的房间面积是12平方米，他的房间只放了一张长1.9米、宽1.4米的床．他的房间还有多少平方米的空地？",
+        "segmented_text": "聪聪 的 房间 面积 是 12 平方米 ， 他 的 房间 只 放 了 一张 长 1.9 米 、 宽 1.4 米 的 床 ． 他 的 房间 还有 多少 平方米 的 空地 ？",
+        "equation": "x=12-rectangle_area(1.9, 1.4)",
+        "ans": "9.34",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=12-1.9*1.4"
+        ]
+    },
+    {
+        "id": 142,
+        "original_text": "北京故宫要重新油漆12根大圆柱，圆柱底面周长为3.14米，高6.5米，按1千克油漆可漆5平方米计算，漆这些大圆柱要多少千克油漆？",
+        "segmented_text": "北京故宫 要 重新 油漆 12 根 大 圆柱 ， 圆柱 底面 周长 为 3.14 米 ， 高 6.5 米 ， 按 1 千克 油漆 可 漆 5 平方米 计算 ， 漆 这些 大 圆柱 要 多少 千克 油漆 ？",
+        "equation": "x=3.14*6.5*12/5",
+        "ans": "48.984",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 143,
+        "original_text": "一辆运煤车从里面量长2.5米、宽1.8米，装的煤高0.6米，平均每立方米煤重1.5吨，这辆车装的煤有多少吨？",
+        "segmented_text": "一 辆 运煤车 从 里面 量 长 2.5 米 、 宽 1.8 米 ， 装 的 煤 高 0.6 米 ， 平均 每 立方米 煤 重 1.5 吨 ， 这辆 车 装 的 煤 有 多少 吨 ？",
+        "equation": "x=cuboid_volume(2.5, 1.8, 0.6)*1.5",
+        "ans": "4.05",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=2.5*1.8*0.6*1.5"
+        ]
+    },
+    {
+        "id": 144,
+        "original_text": "1立方分米棉花重0.08千克，15立方分米的棉花重多少千克．",
+        "segmented_text": "1 立方分米 棉花 重 0.08 千克 ， 15 立方分米 的 棉花 重 多少 千克 ．",
+        "equation": "x=0.08*15",
+        "ans": "1.2",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 145,
+        "original_text": "一块菜地用木条围成一个长方形，长10米，比宽多2米，这块菜地的面积=？",
+        "segmented_text": "一 块 菜地 用 木条 围成 一个 长方形 ， 长 10 米 ， 比 宽 多 2 米 ， 这块 菜地 的 面积 = ？",
+        "equation": "x=rectangle_area(10, (10-2))",
+        "ans": "80",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=10*(10-2)"
+        ]
+    },
+    {
+        "id": 146,
+        "original_text": "在一幅扇形统计图中，桃树的棵树占30%，图上扇形的面积正好是3平方厘米；如果橘树的棵数占45%，那么图上扇形的面积=多少平方厘米．",
+        "segmented_text": "在 一幅 扇形 统计图 中 ， 桃树 的 棵 树 占 30% ， 图 上 扇形 的 面积 正好 是 3 平方厘米 ； 如果 橘树 的 棵 数 占 45% ， 那么 图 上 扇形 的 面积 = 多少 平方厘米 ．",
+        "equation": "x=3/30%*45%",
+        "ans": "4.5",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 147,
+        "original_text": "一个圆形池塘，它的周长是600米，每隔5米栽种一棵柳树，需要树苗多少株？",
+        "segmented_text": "一 个 圆形 池塘 ， 它 的 周长 是 600 米 ， 每隔 5 米 栽种 一棵 柳树 ， 需要 树苗 多少 株 ？",
+        "equation": "x=600/5",
+        "ans": "120",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 148,
+        "original_text": "一块试验田面积是(2/3)公顷，其中(1/5)用来种荞麦，(3/10)用来种小米，其余的种芝麻．种芝麻的面积占这块地的几分之几？",
+        "segmented_text": "一 块 试验田 面积 是 (2/3) 公顷 ， 其中 (1/5) 用来 种 荞麦 ， (3/10) 用来 种 小米 ， 其余 的 种 芝麻 ． 种 芝麻 的 面积 占 这块 地 的 几分 之 几 ？",
+        "equation": "x=1-(1/5)-(3/10)",
+        "ans": "((1)/(2))",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 149,
+        "original_text": "甲、乙两人绕周长1540米的环形广场竞走，已知甲每分钟走160米，乙的速度是甲的3倍．现在甲在乙后面260米，乙追上甲需要多少分钟？",
+        "segmented_text": "甲 、 乙 两 人 绕 周长 1540 米 的 环形 广场 竞走 ， 已知 甲 每分钟 走 160 米 ， 乙 的 速度 是 甲 的 3 倍 ． 现在 甲 在 乙 后面 260 米 ， 乙 追 上 甲 需要 多少 分钟 ？",
+        "equation": "x=(1540-260)/(160*3-160)",
+        "ans": "4",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 150,
+        "original_text": "一块长方形菜地，长是9米，宽是6米．这块菜地一共收青菜972千克．平均每平方米收青菜多少千克？",
+        "segmented_text": "一 块 长方形 菜地 ， 长 是 9 米 ， 宽 是 6 米 ． 这块 菜地 一共 收 青菜 972 千克 ． 平均 每平方米 收 青菜 多少 千克 ？",
+        "equation": "x=972/(rectangle_area(9, 6))",
+        "ans": "18",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=972/(9*6)"
+        ]
+    },
+    {
+        "id": 151,
+        "original_text": "一块长方形铁皮的长是3米，宽是2米，它的周长=多少米．",
+        "segmented_text": "一 块 长方形 铁皮 的 长 是 3 米 ， 宽 是 2 米 ， 它 的 周长 = 多少 米 ．",
+        "equation": "x=rectangle_perimeter(3, 2)",
+        "ans": "10",
+        "knowledge": [
+            "(rectangle, (length + width) * 2 = perimeter)"
+        ],
+        "history": [
+            "x=(3+2)*2"
+        ]
+    },
+    {
+        "id": 152,
+        "original_text": "一个圆柱形水桶，若将高改为原来的一半，底面直径为原来的2倍，可装水40千克，那么原来可装水多少千克？",
+        "segmented_text": "一 个 圆柱形 水桶 ， 若 将 高 改为 原来 的 一半 ， 底面 直径 为 原来 的 2 倍 ， 可 装 水 40 千克 ， 那么 原来 可 装 水 多少 千克 ？",
+        "equation": "x=40/2^2*2",
+        "ans": "20",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 153,
+        "original_text": "一个三角形底是10厘米，是高的2倍，这个三角形的面积=多少平方厘米．",
+        "segmented_text": "一 个 三角形 底 是 10 厘米 ， 是 高 的 2 倍 ， 这个 三角形 的 面积 = 多少 平方厘米 ．",
+        "equation": "x=triangle_area(10, (10/2))",
+        "ans": "25",
+        "knowledge": [
+            "(triangle, base * height / 2 = area)"
+        ],
+        "history": [
+            "x=10*(10/2)/2"
+        ]
+    },
+    {
+        "id": 154,
+        "original_text": "一个长方体的底面积是12平方厘米，体积是36立方厘米，高=多少厘米．",
+        "segmented_text": "一 个 长方体 的 底 面积 是 12 平方厘米 ， 体积 是 36 立方厘米 ， 高 = 多少 厘米 ．",
+        "equation": "x=36/12",
+        "ans": "3",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 155,
+        "original_text": "小强买了6枝圆珠笔用去9元钱，用15元钱买同样的圆珠笔，能买几枝？",
+        "segmented_text": "小强 买 了 6 枝 圆珠笔 用 去 9 元 钱 ， 用 15 元 钱 买 同样 的 圆珠笔 ， 能 买 几枝 ？",
+        "equation": "x=6/9*15",
+        "ans": "10",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 156,
+        "original_text": "一个会议厅计划铺地砖，用900块边长80cm的方砖刚好铺满，方砖每块45元，铺方砖的其他费用需3400元．铺好这个会议厅一共需要多少元？",
+        "segmented_text": "一 个 会议厅 计划 铺地砖 ， 用 900 块 边长 80cm 的 方砖 刚好 铺满 ， 方砖 每块 45 元 ， 铺 方砖 的 其他费用 需 3400 元 ． 铺 好 这个 会议厅 一共 需要 多少 元 ？",
+        "equation": "x=900*45+3400",
+        "ans": "43900",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 157,
+        "original_text": "王老师需要用32分米长的铁丝来围一个圆形木盆的底部．他先将一根铁丝剪去一半，再剪去2分米，正好符合要求．原来这根铁丝长多少分米？",
+        "segmented_text": "王老师 需要 用 32 分 米 长 的 铁丝 来 围 一个 圆形 木盆 的 底部 ． 他 先 将 一根 铁丝 剪 去 一半 ， 再剪 去 2 分 米 ， 正好 符合要求 ． 原来 这根 铁丝 长 多少 分 米 ？",
+        "equation": "x=(32+2)*2",
+        "ans": "68",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 158,
+        "original_text": "给一个长方形铁门的表面涂防锈漆，涂漆的面积是8平方米，需要涂两次，第一次每平方米用15克漆，笫二次每平方米用的漆是第一次的(3/5)，一共需要多少克防锈漆？",
+        "segmented_text": "给 一个 长方形 铁门 的 表面 涂 防锈漆 ， 涂漆 的 面积 是 8 平方米 ， 需要 涂 两次 ， 第一次 每平方米 用 15 克 漆 ， 笫 二 次 每平方米 用 的 漆 是 第一次 的 (3/5) ， 一共 需要 多少 克 防锈漆 ？",
+        "equation": "x=8*15+8*15*(3/5)",
+        "ans": "192",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 159,
+        "original_text": "一个长方体的宽是长的(2/3)，长是高的(5/6)，它的宽是10厘米，它的高=多少厘米？",
+        "segmented_text": "一 个 长方体 的 宽 是 长 的 (2/3) ， 长 是 高 的 (5/6) ， 它 的 宽 是 10 厘米 ， 它 的 高 = 多少 厘米 ？",
+        "equation": "x=10/(2/3)/(5/6)",
+        "ans": "18",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 160,
+        "original_text": "在一个长50厘米，宽40厘米，高30厘米的玻璃鱼缸里放入一块石头，石头沉入水底．结果水面上升了3.5厘米．这块石头的体积=？",
+        "segmented_text": "在 一个 长 50 厘米 ， 宽 40 厘米 ， 高 30 厘米 的 玻璃 鱼缸 里 放入 一块 石头 ， 石头 沉入 水底 ． 结果 水面 上升 了 3.5 厘米 ． 这块 石头 的 体积 = ？",
+        "equation": "x=cuboid_volume(50, 40, 3.5)",
+        "ans": "7000",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=50*40*3.5"
+        ]
+    },
+    {
+        "id": 161,
+        "original_text": "一个汽车轮胎的外直径是0.8米，如果车轮每分钟转400周，那么，这辆汽车每分钟能行驶多少米？",
+        "segmented_text": "一 个 汽车轮胎 的 外 直径 是 0.8 米 ， 如果 车轮 每分钟 转 400 周 ， 那么 ， 这辆 汽车 每分钟 能 行驶 多少 米 ？",
+        "equation": "x=circumference_diameter(0.8)*400",
+        "ans": "1004.8",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*0.8*400"
+        ]
+    },
+    {
+        "id": 162,
+        "original_text": "在一个长方形容器里，装有12厘米深的水，由于天气突变，上面结了一层冰，冰的厚度为3.6厘米．已知水结冰体积要增加(1/11)，这时冰层下的水深多少厘米？",
+        "segmented_text": "在 一个 长方形 容器 里 ， 装有 12 厘米 深 的 水 ， 由于 天气 突变 ， 上面 结 了 一层 冰 ， 冰 的 厚度 为 3.6 厘米 ． 已知 水 结冰 体积 要 增加 (1/11) ， 这时 冰层 下 的 水深 多少 厘米 ？",
+        "equation": "x=12-3.6/(1+(1/11))",
+        "ans": "8.7",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 163,
+        "original_text": "一个长方体底面积是25平方厘米，体积是200立方厘米，高=．",
+        "segmented_text": "一 个 长方体 底 面积 是 25 平方厘米 ， 体积 是 200 立方厘米 ， 高 = ．",
+        "equation": "x=200/25",
+        "ans": "8",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 164,
+        "original_text": "一块地728平方米，其中(1/8)种番茄，(1/2)种白菜，其余的种南瓜，种南瓜的面积=多少平方米？",
+        "segmented_text": "一 块 地 728 平方米 ， 其中 (1/8) 种 番茄 ， (1/2) 种 白菜 ， 其余 的 种 南瓜 ， 种 南瓜 的 面积 = 多少 平方米 ？",
+        "equation": "x=728*(1-(1/8)-(1/2))",
+        "ans": "273",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 165,
+        "original_text": "学校有一个平行四边形菜园，底边长36米，高28米，每平方米栽9棵大白菜，这块菜地一共可以栽多少棵大白菜？",
+        "segmented_text": "学校 有 一个 平行四边形 菜园 ， 底边 长 36 米 ， 高 28 米 ， 每平方米 栽 9 棵 大白菜 ， 这块 菜地 一共 可以 栽 多少 棵 大白菜 ？",
+        "equation": "x=(36*28)*9",
+        "ans": "9072",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 166,
+        "original_text": "在一个直径为6厘米的半圆中再剪掉两个直径分别是2厘米和4厘米的半圆，现在图形的周长=多少厘米．",
+        "segmented_text": "在 一个 直径 为 6 厘米 的 半圆 中 再 剪掉 两个 直径 分别 是 2 厘米 和 4 厘米 的 半圆 ， 现在 图形 的 周长 = 多少 厘米 ．",
+        "equation": "x=circumference_diameter(6)/2+circumference_diameter(2)/2+circumference_diameter(4)/2",
+        "ans": "18.84",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*6/2+3.14*2/2+3.14*4/2"
+        ]
+    },
+    {
+        "id": 167,
+        "original_text": "丽丽到书店买笔记本，买6.8元一本的，差0.7元，她只好买4.5元一本的，剩下的钱正好买了一枝圆珠笔．这枝圆珠笔多少钱？",
+        "segmented_text": "丽丽 到 书店 买 笔记本 ， 买 6.8 元 一本 的 ， 差 0.7 元 ， 她 只好 买 4.5 元 一本 的 ， 剩下 的 钱 正好 买 了 一枝 圆珠笔 ． 这 枝 圆珠笔 多少 钱 ？",
+        "equation": "x=6.8-0.7-4.5",
+        "ans": "1.6",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 168,
+        "original_text": "冰融化成水后，水的体积变为冰的体积的(10/11)，现在有块冰，融化成水后的体积是30立方分米，这块冰的体积=多少立方分米？",
+        "segmented_text": "冰 融化 成 水 后 ， 水 的 体积 变为 冰 的 体积 的 (10/11) ， 现在 有 块冰 ， 融化 成 水 后 的 体积 是 30 立方分米 ， 这 块冰 的 体积 = 多少 立方分米 ？",
+        "equation": "x=30/(10/11)",
+        "ans": "33",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 169,
+        "original_text": "一次劳动，第一次割半块草地加2公顷，第二天割剩余部分的25%，还剩6公顷未割，这块草地面积共多少公顷．",
+        "segmented_text": "一 次 劳动 ， 第一次 割 半块 草地 加 2 公顷 ， 第 二 天 割 剩余 部分 的 25% ， 还 剩 6 公顷 未 割 ， 这块 草地 面积 共 多少 公顷 ．",
+        "equation": "x=[6/(1-25%)+2]*2",
+        "ans": "20",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 170,
+        "original_text": "一个圆柱体的体积是(1/3)立方米，与它等底等高的圆锥体的体积=多少立方米．",
+        "segmented_text": "一 个 圆柱体 的 体积 是 (1/3) 立方米 ， 与 它 等 底 等 高 的 圆锥体 的 体积 = 多少 立方米 ．",
+        "equation": "x=(1/3)/3",
+        "ans": "((1)/(9))",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 171,
+        "original_text": "小明家要粉刷客厅的4周墙壁及天花板．已知客厅长6m，宽5m，高3m．如果每平方米需要5.4元工料费，粉刷客厅一共需要多少钱？",
+        "segmented_text": "小 明 家 要 粉刷 客厅 的 4 周 墙壁 及 天花板 ． 已知 客厅 长 6m ， 宽 5m ， 高 3m ． 如果 每平方米 需要 5.4 元 工料 费 ， 粉刷 客厅 一共 需要 多少 钱 ？",
+        "equation": "x=(cuboid_surface(6, 5, 3)-rectangle_area(6, 5))*5.4",
+        "ans": "518.4",
+        "knowledge": [
+            "(cuboid, (length * width + length * height + width * height) * 2 = surface_area)",
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=5.4*[(6+5)*2*3+5*6]"
+        ]
+    },
+    {
+        "id": 172,
+        "original_text": "一种圆珠笔原价每支4.8元，降价后每支便宜0.3元，原来买195支笔的钱，现在可以买多少支？",
+        "segmented_text": "一 种 圆珠笔 原价 每支 4.8 元 ， 降价 后 每支 便宜 0.3 元 ， 原来 买 195 支 笔 的 钱 ， 现在 可以 买 多少 支 ？",
+        "equation": "x=4.8*195/(4.8-0.3)",
+        "ans": "208",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 173,
+        "original_text": "有一个长方体蓄水池，长3米、宽2米、高1.2米．水池里水深0.5米．与水接触的面积=多少平方米？",
+        "segmented_text": "有 一个 长方体 蓄水池 ， 长 3 米 、 宽 2 米 、 高 1.2 米 ． 水池 里 水深 0.5 米 ． 与 水 接触 的 面积 = 多少 平方米 ？",
+        "equation": "x=cuboid_surface(3, 2, 0.5)-rectangle_area(3, 2)",
+        "ans": "11",
+        "knowledge": [
+            "(cuboid, (length * width + length * height + width * height) * 2 = surface_area)",
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=3*2+(3*0.5+2*0.5)*2"
+        ]
+    },
+    {
+        "id": 174,
+        "original_text": "一辆自行车前轮的直径是0.8米．如果这辆自行车每分钟转100圈，那么它每分钟可行多少米？",
+        "segmented_text": "一 辆 自行车 前轮 的 直径 是 0.8 米 ． 如果 这辆 自行车 每分钟 转 100 圈 ， 那么 它 每分钟 可行 多少 米 ？",
+        "equation": "x=circumference_diameter(0.8)*100",
+        "ans": "251.2",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*0.8*100"
+        ]
+    },
+    {
+        "id": 175,
+        "original_text": "一个长方形的长是6分米，宽是长的(3/4)，这个长方形宽=．",
+        "segmented_text": "一 个 长方形 的 长 是 6 分 米 ， 宽 是 长 的 (3/4) ， 这个 长方形 宽 = ．",
+        "equation": "x=6*(3/4)",
+        "ans": "4.5",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 176,
+        "original_text": "一块平行四边形的地，底53米，高16米．在这块地上栽桃树，每棵占地4平方米．这块地大约能栽多少棵桃树？",
+        "segmented_text": "一 块 平行四边形 的 地 ， 底 53 米 ， 高 16 米 ． 在 这块 地上 栽 桃树 ， 每棵 占地 4 平方米 ． 这块 地 大约 能 栽 多少 棵 桃树 ？",
+        "equation": "x=53*16/4",
+        "ans": "212",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 177,
+        "original_text": "有一张边长为1.5米长的正方形桌布，如果每平方米的售价是16.8元，这块桌布要多少元．",
+        "segmented_text": "有 一张 边长 为 1.5 米 长 的 正方形 桌布 ， 如果 每平方米 的 售价 是 16.8 元 ， 这块 桌布 要 多少 元 ．",
+        "equation": "x=square_area(1.5)*16.8",
+        "ans": "37.8",
+        "knowledge": [
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=16.8*(1.5*1.5)"
+        ]
+    },
+    {
+        "id": 178,
+        "original_text": "有两个无盖的长方体水箱，甲水箱里有水，乙水箱空着．从里面量，甲水箱长40厘米，宽32厘米，水面高20厘米；乙水箱长30厘米，宽24厘米，深25厘米．将甲水箱中部分水倒入乙水箱，使两箱水面高度一样，现在水面高多少厘米？",
+        "segmented_text": "有 两个 无盖 的 长方体 水箱 ， 甲 水箱 里 有 水 ， 乙 水箱 空 着 ． 从 里面 量 ， 甲 水箱 长 40 厘米 ， 宽 32 厘米 ， 水面 高 20 厘米 ； 乙 水箱 长 30 厘米 ， 宽 24 厘米 ， 深 25 厘米 ． 将 甲 水箱 中 部分 水 倒入 乙 水箱 ， 使 两箱 水面 高度 一样 ， 现在 水面 高 多少 厘米 ？",
+        "equation": "x=cuboid_volume(40, 32, 20)/(rectangle_area(40, 32)+rectangle_area(30, 24))",
+        "ans": "12.8",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=40*32*20/(40*32+30*24)",
+            "x=cuboid_volume(40, 32, 20)/(40*32+30*24)"
+        ]
+    },
+    {
+        "id": 179,
+        "original_text": "有一个平行四边形果园底长70米，高30米，平均每20平方米种一株果树，这个果园能种多少株果树？",
+        "segmented_text": "有 一个 平行四边形 果园 底 长 70 米 ， 高 30 米 ， 平均 每 20 平方米 种 一株 果树 ， 这个 果园 能 种 多少 株 果树 ？",
+        "equation": "x=70*30/20",
+        "ans": "105",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 180,
+        "original_text": "一个三角形3条边的长分别是(1/3)米、(5/9)米和(7/18)米，这个三角形的周长=多少米？",
+        "segmented_text": "一 个 三角形 3 条 边 的 长 分别 是 (1/3) 米 、 (5/9) 米 和 (7/18) 米 ， 这个 三角形 的 周长 = 多少 米 ？",
+        "equation": "x=(1/3)+(5/9)+(7/18)",
+        "ans": "((23)/(18))",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 181,
+        "original_text": "王先生看中了“百姓春天”一套5楼90平方米的商品房，房子的市场价是每平方米4000元．国家要求开发商将该商品房的一部分让利于低收入者，该商品房面积中的60平方米部分，单价按房子市场价的(3/4)计算，超过部分按市场价计算．王先生获得此住房最少要多少钱？",
+        "segmented_text": "王先生 看中 了 “ 百姓 春天 ” 一套 5 楼 90 平方米 的 商品房 ， 房子 的 市场价 是 每平方米 4000 元 ． 国家 要求 开发商 将 该 商品房 的 一部分 让 利于 低收入者 ， 该 商品房 面积 中 的 60 平方米 部分 ， 单价 按 房子 市场价 的 (3/4) 计算 ， 超过 部分 按 市场价 计算 ． 王先生 获得 此 住房 最少 要 多少 钱 ？",
+        "equation": "x=(90-60)*4000+4000*(3/4)*60",
+        "ans": "300000",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 182,
+        "original_text": "一个平行四边形的底和高都扩大5倍，它的面积扩大多少倍．",
+        "segmented_text": "一 个 平行四边形 的 底 和 高 都 扩大 5 倍 ， 它 的 面积 扩大 多少倍 ．",
+        "equation": "x=5*5",
+        "ans": "25",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 183,
+        "original_text": "有一块平行四边形钢板，底是6.5分米，高是3.4分米．如果每平方分米钢板重0.75千克，这块钢板重多少千克？",
+        "segmented_text": "有 一块 平行四边形 钢板 ， 底 是 6.5 分 米 ， 高 是 3.4 分 米 ． 如果 每 平方分米 钢板 重 0.75 千克 ， 这块 钢板 重 多少 千克 ？",
+        "equation": "x=(6.5*3.4)*0.75",
+        "ans": "16.575",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 184,
+        "original_text": "工人叔叔挖一个长8m，宽6m，深2m的游泳池．如果游泳池的4周和底部贴上瓷砖，至少需要多少平方米的瓷砖？",
+        "segmented_text": "工人 叔叔 挖 一个 长 8m ， 宽 6m ， 深 2m 的 游泳池 ． 如果 游泳池 的 4 周 和 底部 贴 上 瓷砖 ， 至少 需要 多少 平方米 的 瓷砖 ？",
+        "equation": "x=cuboid_surface(8, 6, 2)-rectangle_area(8, 6)",
+        "ans": "104",
+        "knowledge": [
+            "(cuboid, (length * width + length * height + width * height) * 2 = surface_area)",
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=(8*2+6*2)*2+8*6"
+        ]
+    },
+    {
+        "id": 185,
+        "original_text": "冰化成水后体积减少(1/12)，一块冰的体积是36立方分米，化成水后的体积=多少立方分米？",
+        "segmented_text": "冰 化成 水 后 体积 减少 (1/12) ， 一块 冰 的 体积 是 36 立方分米 ， 化成 水 后 的 体积 = 多少 立方分米 ？",
+        "equation": "x=36*(1-(1/12))",
+        "ans": "33",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 186,
+        "original_text": "把一个长、宽分别是15厘米和10厘米的长方形，拉成一个一条高为12厘米的平行四边形，它的面积=多少平方厘米．",
+        "segmented_text": "把 一个 长 、 宽 分别 是 15 厘米 和 10 厘米 的 长方形 ， 拉 成 一个 一条 高 为 12 厘米 的 平行四边形 ， 它 的 面积 = 多少 平方厘米 ．",
+        "equation": "x=10*12",
+        "ans": "120",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 187,
+        "original_text": "9寨沟的长海湖最宽处约4400m，比它的长短(9/20)．它的长约=多少米？",
+        "segmented_text": "9 寨 沟 的 长海 湖 最 宽 处 约 4400m ， 比 它 的 长短 (9/20) ． 它 的 长 约 = 多少 米 ？",
+        "equation": "x=4400/(1-(9/20))",
+        "ans": "8000",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 188,
+        "original_text": "一枝钢笔售价5.85元，比一枝圆珠笔贵2.43元，小明带10元钱买一枝钢笔和一枝圆珠笔，应找回多少元？",
+        "segmented_text": "一 枝 钢笔 售价 5.85 元 ， 比 一枝 圆珠笔 贵 2.43 元 ， 小 明 带 10 元 钱 买 一枝 钢笔 和 一枝 圆珠笔 ， 应 找回 多少 元 ？",
+        "equation": "x=10-(5.85-2.43)-5.85",
+        "ans": "0.73",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 189,
+        "original_text": "一张长方形硬纸板长12厘米，宽9厘米．在这个长方形中，剪去一个最大的正方形，剩下的小长方形的面积=？",
+        "segmented_text": "一 张 长方形 硬纸板 长 12 厘米 ， 宽 9 厘米 ． 在 这个 长方形 中 ， 剪 去 一个 最大 的 正方形 ， 剩下 的 小 长方形 的 面积 = ？",
+        "equation": "x=rectangle_area(12, 9)-square_area(9)",
+        "ans": "27",
+        "knowledge": [
+            "(rectangle, length * width = area)",
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=9*(12-9)"
+        ]
+    },
+    {
+        "id": 190,
+        "original_text": "一个平行四边形底是8厘米，高是6厘米，面积=多少平方厘米．",
+        "segmented_text": "一 个 平行四边形 底 是 8 厘米 ， 高 是 6 厘米 ， 面积 = 多少 平方厘米 ．",
+        "equation": "x=8*6",
+        "ans": "48",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 191,
+        "original_text": "教室地板面积50.4平方米，边长是0.3米的方砖铺这个教室地面，最少要用多少块这样的地砖？",
+        "segmented_text": "教室 地板 面积 50.4 平方米 ， 边长 是 0.3 米 的 方砖 铺 这个 教室 地面 ， 最少 要 用 多少 块 这样 的 地砖 ？",
+        "equation": "x=50.4/square_area(0.3)",
+        "ans": "560",
+        "knowledge": [
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=50.4/(0.3*0.3)"
+        ]
+    },
+    {
+        "id": 192,
+        "original_text": "一个梯形的面积是0.81m^2，高是0.9m，这个梯形上底与下底的和=多少m．",
+        "segmented_text": "一 个 梯形 的 面积 是 0.81m ^ 2 ， 高 是 0.9m ， 这个 梯形 上 底 与 下 底 的 和 = 多少 m ．",
+        "equation": "x=0.81*2/0.9",
+        "ans": "1.8",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 193,
+        "original_text": "把一个长49厘米，宽4厘米，高3厘米的长方体铁块，熔铸成一个高12厘米的圆锥体，这个圆锥的底面积=多少平方厘米？",
+        "segmented_text": "把 一个 长 49 厘米 ， 宽 4 厘米 ， 高 3 厘米 的 长方体 铁块 ， 熔铸 成 一个 高 12 厘米 的 圆锥体 ， 这个 圆锥 的 底 面积 = 多少 平方厘米 ？",
+        "equation": "x=cuboid_volume(49, 4, 3)*3/12",
+        "ans": "147",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=49*4*3*3/12"
+        ]
+    },
+    {
+        "id": 194,
+        "original_text": "有一个2米深的圆形水池，半径是6米，现在想把水池底面与周边用瓷砖贴满，贴上瓷砖面的面积=？",
+        "segmented_text": "有 一个 2 米 深 的 圆形 水池 ， 半径 是 6 米 ， 现在 想 把 水池 底面 与 周边 用 瓷砖 贴 满 ， 贴 上 瓷砖 面 的 面积 = ？",
+        "equation": "x=circumference_radius(6)*2+circle_area(6)",
+        "ans": "188.4",
+        "knowledge": [
+            "(circle, 3.14 * radius^2 = area)",
+            "(circle, 2 * 3.14 * radius = circumference)"
+        ],
+        "history": [
+            "x=2*3.14*6*2+3.14*6^2",
+            "x=2*3.14*6*2+circle_area(6)"
+        ]
+    },
+    {
+        "id": 195,
+        "original_text": "张爷爷家有一块地，他用这块地的(2/9)种大豆，(2/5)种玉米，其余的种棉花，种棉花的面积占这块地的几分之几？",
+        "segmented_text": "张 爷爷 家 有 一块 地 ， 他 用 这块 地 的 (2/9) 种 大豆 ， (2/5) 种 玉米 ， 其余 的 种 棉花 ， 种 棉花 的 面积 占 这块 地 的 几分 之 几 ？",
+        "equation": "x=1-(2/9)-(2/5)",
+        "ans": "((17)/(45))",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 196,
+        "original_text": "要挖一个长60米，宽40米，深3米的游泳池，共需挖出多少立方米的土．",
+        "segmented_text": "要 挖 一个 长 60 米 ， 宽 40 米 ， 深 3 米 的 游泳池 ， 共 需 挖出 多少 立方米 的 土 ．",
+        "equation": "x=cuboid_volume(60, 40, 3)",
+        "ans": "7200",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=60*40*3"
+        ]
+    },
+    {
+        "id": 197,
+        "original_text": "长方形的宽是4厘米，长是宽的2倍，周长=多少厘米．",
+        "segmented_text": "长方形 的 宽 是 4 厘米 ， 长 是 宽 的 2 倍 ， 周长 = 多少 厘米 ．",
+        "equation": "x=rectangle_perimeter(4*2, 4)",
+        "ans": "24",
+        "knowledge": [
+            "(rectangle, (length + width) * 2 = perimeter)"
+        ],
+        "history": [
+            "x=(4+4*2)*2"
+        ]
+    },
+    {
+        "id": 198,
+        "original_text": "公园里有一个圆形的水池，李大爷每天早晨绕着水池跑20圈，如果圆形水池的直径是38米，李大爷每天早晨跑多少米？",
+        "segmented_text": "公园 里 有 一个 圆形 的 水池 ， 李 大爷 每天 早晨 绕 着 水池 跑 20 圈 ， 如果 圆形 水池 的 直径 是 38 米 ， 李 大爷 每天 早晨 跑 多少 米 ？",
+        "equation": "x=circumference_diameter(38)*20",
+        "ans": "2386.4",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*38*20"
+        ]
+    },
+    {
+        "id": 199,
+        "original_text": "一块地，用它的(4/7)种黄瓜，(2/7)种茄子，其余的种辣椒，种辣椒的面积占这块地的几分之几？",
+        "segmented_text": "一 块 地 ， 用 它 的 (4/7) 种 黄瓜 ， (2/7) 种 茄子 ， 其余 的 种 辣椒 ， 种 辣椒 的 面积 占 这块 地 的 几分 之 几 ？",
+        "equation": "x=1-(4/7)-(2/7)",
+        "ans": "((1)/(7))",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 200,
+        "original_text": "一个长方体的长是7cm，宽是4cm，高是3cm，它的体积=．",
+        "segmented_text": "一 个 长方体 的 长 是 7cm ， 宽 是 4cm ， 高 是 3cm ， 它 的 体积 = ．",
+        "equation": "x=cuboid_volume(7, 4, 3)",
+        "ans": "84",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=7*4*3"
+        ]
+    },
+    {
+        "id": 201,
+        "original_text": "图书馆的地面长25分米，宽12分米，若用边长是2分米的地砖铺图书馆地面，需要这样的地砖多少块？",
+        "segmented_text": "图书馆 的 地面 长 25 分 米 ， 宽 12 分 米 ， 若 用 边长 是 2 分 米 的 地砖 铺 图书馆 地面 ， 需要 这样 的 地砖 多少 块 ？",
+        "equation": "x=rectangle_area(25, 12)/square_area(2)",
+        "ans": "75",
+        "knowledge": [
+            "(rectangle, length * width = area)",
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=(25*12)/(2*2)"
+        ]
+    },
+    {
+        "id": 202,
+        "original_text": "3.1416*2.7183=．",
+        "segmented_text": "3.1416 * 2.7183 = ．",
+        "equation": "x=3.1416*2.7183",
+        "ans": "8.53981128",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 203,
+        "original_text": "15个圆钉大约重10克，多少个圆钉大约重20克．",
+        "segmented_text": "15 个 圆钉 大约 重 10 克 ， 多少 个 圆钉 大约 重 20 克 ．",
+        "equation": "x=15/10*20",
+        "ans": "30",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 204,
+        "original_text": "王大爷有一块长25m，宽14m的长方形麦田，如果每平方米产5千克小麦，那么这块麦田可以产小麦多少千克？",
+        "segmented_text": "王大爷 有 一块 长 25m ， 宽 14m 的 长方形 麦田 ， 如果 每平方米 产 5 千克 小麦 ， 那么 这块 麦田 可以 产 小麦 多少 千克 ？",
+        "equation": "x=rectangle_area(25, 14)*5",
+        "ans": "1750",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=25*14*5"
+        ]
+    },
+    {
+        "id": 205,
+        "original_text": "有一个长方体木块，长10分米，宽8分米，高6分米，现将它加工成一个最大的正方体，削去的木料=多少立方分米？",
+        "segmented_text": "有 一个 长方体 木块 ， 长 10 分 米 ， 宽 8 分 米 ， 高 6 分 米 ， 现 将 它 加工 成 一个 最大 的 正方体 ， 削去 的 木料 = 多少 立方分米 ？",
+        "equation": "x=cuboid_volume(10, 8, 6)-cubic_volume(6)",
+        "ans": "264",
+        "knowledge": [
+            "(cubic, side * side * side = area)",
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=10*8*6-6*6*6",
+            "x=10*8*6-cubic_volume(6)"
+        ]
+    },
+    {
+        "id": 206,
+        "original_text": "一种手榴弹爆炸后，有效的杀伤半径是15米，杀伤面积=多少平方米．",
+        "segmented_text": "一 种 手榴弹 爆炸 后 ， 有效 的 杀伤 半径 是 15 米 ， 杀伤 面积 = 多少 平方米 ．",
+        "equation": "x=circle_area(15)",
+        "ans": "706.5",
+        "knowledge": [
+            "(circle, 3.14 * radius^2 = area)"
+        ],
+        "history": [
+            "x=3.14*15*15"
+        ]
+    },
+    {
+        "id": 207,
+        "original_text": "在400米的环形跑道4周每隔5米插一面彩旗，需要多少面彩旗？",
+        "segmented_text": "在 400 米 的 环形 跑道 4 周 每隔 5 米 插 一面 彩旗 ， 需要 多少 面 彩旗 ？",
+        "equation": "x=400/5",
+        "ans": "80",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 208,
+        "original_text": "三角形的面积是6.2cm^2，高是3.1米厘米，底=多少厘米．",
+        "segmented_text": "三角形 的 面积 是 6.2cm ^ 2 ， 高 是 3.1 米 厘米 ， 底 = 多少 厘米 ．",
+        "equation": "x=6.2*2/3.1",
+        "ans": "4",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 209,
+        "original_text": "制作一个底面直径20厘米，长50厘米的圆柱形通风管，至少要用多少平方厘米铁皮．",
+        "segmented_text": "制作 一个 底面 直径 20 厘米 ， 长 50 厘米 的 圆柱形 通风管 ， 至少 要 用 多少 平方厘米 铁皮 ．",
+        "equation": "x=circumference_diameter(20)*50",
+        "ans": "3140",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*20*50"
+        ]
+    },
+    {
+        "id": 210,
+        "original_text": "李庄今年油菜的种植面积是28公顷，比去年增加(1/6)．去年油菜的种植面积=多少公顷？",
+        "segmented_text": "李 庄 今年 油菜 的 种植 面积 是 28 公顷 ， 比 去年 增加 (1/6) ． 去年 油菜 的 种植 面积 = 多少 公顷 ？",
+        "equation": "x=28/(1+(1/6))",
+        "ans": "24",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 211,
+        "original_text": "一个底面积是24平方米的长方体蓄水池，最多能蓄水60立方米，这个蓄水池深多少米？",
+        "segmented_text": "一 个 底 面积 是 24 平方米 的 长方体 蓄水池 ， 最 多 能 蓄水 60 立方米 ， 这个 蓄水池 深 多少 米 ？",
+        "equation": "x=60/24",
+        "ans": "2.5",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 212,
+        "original_text": "商店有75支钢笔，是圆珠笔支数的(3/5)，钢笔和圆珠笔一共有多少支？",
+        "segmented_text": "商店 有 75 支 钢笔 ， 是 圆珠笔 支数 的 (3/5) ， 钢笔 和 圆珠笔 一共 有 多少 支 ？",
+        "equation": "x=75/(3/5)+75",
+        "ans": "200",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 213,
+        "original_text": "我家买了5000元国家建设债券，定期5年，如果年利率是3.14%，到期时，我家可得到本金和利息一共=多少元？",
+        "segmented_text": "我家 买 了 5000 元 国家 建设 债券 ， 定期 5 年 ， 如果 年利率 是 3.14% ， 到期 时 ， 我家 可 得到 本金 和 利息 一共 = 多少 元 ？",
+        "equation": "x=5000+5000*3.14%*5",
+        "ans": "5785",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 214,
+        "original_text": "你听说过“冰山一角”？冰山一角露在水面上的只是一小部分，大部分隐藏在水面下，如果一座冰山露在水面上体积约是80立方米，这“一角”只占这座冰山的(1/7)，那么这座冰山的体积=多少立方米？",
+        "segmented_text": "你 听说 过 “ 冰山一角 ” ？ 冰山一角 露 在 水面 上 的 只是 一小部分 ， 大部分 隐藏 在 水面 下 ， 如果 一座 冰山 露 在 水面 上 体积 约 是 80 立方米 ， 这 “ 一角 ” 只 占 这 座 冰山 的 (1/7) ， 那么 这 座 冰山 的 体积 = 多少 立方米 ？",
+        "equation": "x=80/(1/7)",
+        "ans": "560",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 215,
+        "original_text": "一块长方形地面积是280平方米，如果宽是14米，那么长=多少米．",
+        "segmented_text": "一 块 长方形 地 面积 是 280 平方米 ， 如果 宽 是 14 米 ， 那么 长 = 多少 米 ．",
+        "equation": "x=280/14",
+        "ans": "20",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 216,
+        "original_text": "一个长方体水池的容积是5600升，这个水池的底面是一个长为40分米，宽为20分米的长方形，求水池的高=多少分米？",
+        "segmented_text": "一 个 长方体 水池 的 容积 是 5600 升 ， 这个 水池 的 底面 是 一个 长 为 40 分 米 ， 宽 为 20 分 米 的 长方形 ， 求 水池 的 高 = 多少 分 米 ？",
+        "equation": "x=5600/rectangle_area(40, 20)",
+        "ans": "7",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=5600/40/20"
+        ]
+    },
+    {
+        "id": 217,
+        "original_text": "把一根2米．地面积为3.14平方分米的圆柱形钢材截成相等的两段，表面积增加了多少．",
+        "segmented_text": "把 一根 2 米 ． 地 面积 为 3.14 平方分米 的 圆柱形 钢材 截 成 相等 的 两段 ， 表面积 增加 了 多少 ．",
+        "equation": "x=3.14*2",
+        "ans": "6.28",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 218,
+        "original_text": "小明星期6去外婆家玩，他骑的自行车轮子的直径是0.6米，快到外婆家时要通过一座长1884米的桥，过这座桥自行车的轮子要转多少圈？",
+        "segmented_text": "小 明 星期 6 去 外婆家 玩 ， 他 骑 的 自行车 轮子 的 直径 是 0.6 米 ， 快 到 外婆家 时 要 通过 一座 长 1884 米 的 桥 ， 过 这 座 桥 自行车 的 轮子 要 转 多少 圈 ？",
+        "equation": "x=1884/circumference_diameter(0.6)",
+        "ans": "1000",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=1884/(3.14*0.6)"
+        ]
+    },
+    {
+        "id": 219,
+        "original_text": "一个正方形的边长是4分米，它的周长=．",
+        "segmented_text": "一 个 正方形 的 边长 是 4 分 米 ， 它 的 周长 = ．",
+        "equation": "x=square_perimeter(4)",
+        "ans": "16",
+        "knowledge": [
+            "(square, side * 4 = perimeter)"
+        ],
+        "history": [
+            "x=4*4"
+        ]
+    },
+    {
+        "id": 220,
+        "original_text": "以正方形的任何一条边长为半径画一个圆，已知正方形的面积为5平方厘米，那么这个圆的面积=多少平方厘米．",
+        "segmented_text": "以 正方形 的 任何 一条 边长 为 半径 画 一个 圆 ， 已知 正方形 的 面积 为 5 平方厘米 ， 那么 这个 圆 的 面积 = 多少 平方厘米 ．",
+        "equation": "x=5*3.14",
+        "ans": "15.7",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 221,
+        "original_text": "如果一个等腰三角形的两条边分别是3厘米和7厘米，这个三角形的周长=多少厘米．",
+        "segmented_text": "如果 一个 等腰三角 形 的 两条 边 分别 是 3 厘米 和 7 厘米 ， 这个 三角形 的 周长 = 多少 厘米 ．",
+        "equation": "x=7+7+3",
+        "ans": "17",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 222,
+        "original_text": "一个环形，如果内圆的半径是2厘米，环形的宽度是1厘米，那么环形的面积=多少平方厘米．",
+        "segmented_text": "一 个 环形 ， 如果 内 圆 的 半径 是 2 厘米 ， 环形 的 宽度 是 1 厘米 ， 那么 环形 的 面积 = 多少 平方厘米 ．",
+        "equation": "x=circle_area((2+1)) - circle_area(2)",
+        "ans": "15.7",
+        "knowledge": [
+            "(circle, 3.14 * radius^2 = area)"
+        ],
+        "history": [
+            "x=3.14*[(2+1)^2-2^2]"
+        ]
+    },
+    {
+        "id": 223,
+        "original_text": "一根长1.5米的圆柱形钢材，截成相等的2段后，表面积增加1.6平方分米，这根钢材原来的体积=多少立方分米？",
+        "segmented_text": "一 根 长 1.5 米 的 圆柱形 钢材 ， 截 成 相等 的 2 段 后 ， 表面积 增加 1.6 平方分米 ， 这根 钢材 原来 的 体积 = 多少 立方分米 ？",
+        "equation": "x=1.6/2*1.5",
+        "ans": "1.2",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 224,
+        "original_text": "一个圆柱形蓄水池，底面半径是2米，高是6米，要是水面降低0.5米，需要排水多少立方米？",
+        "segmented_text": "一 个 圆柱形 蓄水池 ， 底面 半径 是 2 米 ， 高 是 6 米 ， 要是 水面 降低 0.5 米 ， 需要 排水 多少 立方米 ？",
+        "equation": "x=circle_area(2)*0.5",
+        "ans": "6.28",
+        "knowledge": [
+            "(circle, 3.14 * radius^2 = area)"
+        ],
+        "history": [
+            "x=3.14*2^2*0.5"
+        ]
+    },
+    {
+        "id": 225,
+        "original_text": "奥奥家房屋总面积是127.8平方米，3个卧室的面积和是48.9平方米，卫生间、厨房、阳台等的面积和是30.6平方米．其余的是客厅，客厅的面积=？",
+        "segmented_text": "奥 奥 家 房屋 总面积 是 127.8 平方米 ， 3 个 卧室 的 面积 和 是 48.9 平方米 ， 卫生间 、 厨房 、 阳台 等 的 面积 和 是 30.6 平方米 ． 其余 的 是 客厅 ， 客厅 的 面积 = ？",
+        "equation": "x=127.8-48.9-30.6",
+        "ans": "48.3",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 226,
+        "original_text": "一个长方形的长减少1.5米，或宽减少1.2米，那么它的面积就都减少6平方米，这个长方形的面积=．",
+        "segmented_text": "一 个 长方形 的 长 减少 1.5 米 ， 或 宽 减少 1.2 米 ， 那么 它 的 面积 就 都 减少 6 平方米 ， 这个 长方形 的 面积 = ．",
+        "equation": "x=rectangle_area(6/1.2, 6/1.5)",
+        "ans": "20",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=(6/1.2)*(6/1.5)"
+        ]
+    },
+    {
+        "id": 227,
+        "original_text": "小巧家的一张方桌，边长是80厘米，这张方桌的面积=？",
+        "segmented_text": "小巧 家 的 一张 方桌 ， 边长 是 80 厘米 ， 这 张 方桌 的 面积 = ？",
+        "equation": "x=square_area(80)",
+        "ans": "6400",
+        "knowledge": [
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=80*80"
+        ]
+    },
+    {
+        "id": 228,
+        "original_text": "我们的祖先早在公元前700多年就发明了用水漏计时的方法，科技小组的同学也尝试做了一个长方体水漏计时器，这个计时器长4dm，宽2dm，高3dm，全部漏完要8小时．某天中午12时，同学们往水漏计时器里加满了水，下午5时放学时，水漏计时器里大约还有多少升水？",
+        "segmented_text": "我们 的 祖先 早 在 公元前 700 多年 就 发明 了 用水 漏计 时 的 方法 ， 科技 小组 的 同学 也 尝试 做 了 一个 长方体 水 漏 计时器 ， 这个 计时器 长 4dm ， 宽 2dm ， 高 3dm ， 全部 漏 完 要 8 小时 ． 某 天 中午 12 时 ， 同学 们 往 水 漏 计时器 里加 满 了 水 ， 下午 5 时 放学 时 ， 水 漏 计时器 里 大约 还有 多少 升水 ？",
+        "equation": "x=cuboid_volume(4, 2, 3)/8*(8-5)",
+        "ans": "9",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=4*2*3/8*(8-5)"
+        ]
+    },
+    {
+        "id": 229,
+        "original_text": "自行车车轮的外直径约0.75米，小明骑车通过一座长1884米的大桥时，每分钟车轮转50周，通过这座大桥共需多少分钟？",
+        "segmented_text": "自行车 车轮 的 外 直径约 0.75 米 ， 小 明 骑车 通过 一座 长 1884 米 的 大桥 时 ， 每分钟 车轮 转 50 周 ， 通过 这 座 大桥 共 需 多少 分钟 ？",
+        "equation": "x=1884/(circumference_diameter(0.75)*50)",
+        "ans": "16",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=1884/(3.14*0.75*50)"
+        ]
+    },
+    {
+        "id": 230,
+        "original_text": "沿着一个周长是800米的鱼塘的一周，每隔20米栽一棵柳树，一共栽多少棵柳树．",
+        "segmented_text": "沿着 一个 周长 是 800 米 的 鱼塘 的 一周 ， 每隔 20 米 栽 一棵 柳树 ， 一共 栽 多少 棵 柳树 ．",
+        "equation": "x=800/20",
+        "ans": "40",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 231,
+        "original_text": "沙漏是古代的一种计时工具．一种正方体箱型沙漏的棱长是12dm，已知平均每小时漏沙72dm^3，照这样计算，多少小时漏光一箱沙？",
+        "segmented_text": "沙漏 是 古代 的 一种 计时 工具 ． 一种 正方体 箱 型 沙漏 的 棱 长 是 12dm ， 已知 平均 每 小时 漏 沙 72dm ^ 3 ， 照 这样 计算 ， 多少 小时 漏光 一箱 沙 ？",
+        "equation": "x=cubic_volume(12)/72",
+        "ans": "24",
+        "knowledge": [
+            "(cubic, side * side * side = area)"
+        ],
+        "history": [
+            "x=12*12*12/72"
+        ]
+    },
+    {
+        "id": 232,
+        "original_text": "甲乙两地相距355千米，一辆客车和一辆货车分别从甲城和乙城相对开出，2.5小时相遇．已知货车每小时形式69.4千米，客车每小时形式多少千米？",
+        "segmented_text": "甲乙 两地 相距 355 千米 ， 一辆 客车 和 一辆 货车 分别 从 甲 城 和 乙 城 相对 开出 ， 2.5 小时 相遇 ． 已知 货车 每 小时 形式 69.4 千米 ， 客车 每 小时 形式 多少 千米 ？",
+        "equation": "x=355/2.5-69.4",
+        "ans": "72.6",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 233,
+        "original_text": "一个长方体容器，底面长3分米，宽2分米，放入一个土豆后水面升高了0.1分米，这个土豆的体积=？",
+        "segmented_text": "一 个 长方体 容器 ， 底面 长 3 分 米 ， 宽 2 分 米 ， 放入 一个 土豆 后 水面 升高 了 0.1 分 米 ， 这个 土豆 的 体积 = ？",
+        "equation": "x=cuboid_volume(3, 2, 0.1)",
+        "ans": "0.6",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=3*2*0.1"
+        ]
+    },
+    {
+        "id": 234,
+        "original_text": "在一个圆形喷水池边的一周共放了20盆鲜花，每两盆鲜花之间相距8分米，求这个水池的周长．",
+        "segmented_text": "在 一个 圆形 喷水池 边 的 一周 共 放 了 20 盆 鲜花 ， 每 两盆 鲜花 之间 相距 8 分 米 ， 求 这个 水池 的 周长 ．",
+        "equation": "x=20*8",
+        "ans": "160",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 235,
+        "original_text": "小刚家买了一长方体玻璃鱼缸，长45厘米，宽30厘米．小刚往水箱中加了20厘米深的水后，又放入金鱼，当金鱼全部游入水下面时，测的水深23厘米．放入的鱼的体积=？",
+        "segmented_text": "小 刚 家 买 了 一 长方体 玻璃 鱼缸 ， 长 45 厘米 ， 宽 30 厘米 ． 小 刚 往 水箱 中加 了 20 厘米 深 的 水 后 ， 又 放入 金鱼 ， 当 金鱼 全部 游 入 水 下面 时 ， 测 的 水深 23 厘米 ． 放入 的 鱼 的 体积 = ？",
+        "equation": "x=cuboid_volume(45, 30, (23-20))",
+        "ans": "4050",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=45*30*(23-20)"
+        ]
+    },
+    {
+        "id": 236,
+        "original_text": "一块蛋糕长12cm，宽6cm，厚5cm，切一刀，表面积最少增加了多少cm^2．",
+        "segmented_text": "一 块 蛋糕 长 12cm ， 宽 6cm ， 厚 5cm ， 切 一刀 ， 表面积 最少 增加 了 多少 cm ^ 2 ．",
+        "equation": "x=rectangle_area(6, 5)*2",
+        "ans": "60",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=5*6*2"
+        ]
+    },
+    {
+        "id": 237,
+        "original_text": "在环形湖路上每隔10米放置1个垃圾桶，共放了30个．环湖长多少米？",
+        "segmented_text": "在 环形 湖 路上 每隔 10 米 放置 1 个 垃圾桶 ， 共 放 了 30 个 ． 环湖 长 多少 米 ？",
+        "equation": "x=30*10",
+        "ans": "300",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 238,
+        "original_text": "陈师傅用铁皮做8节同样大小的圆柱形通风管，直径是20厘米，每节长40厘米．一共用铁皮多少平方厘米？（接头处不计）",
+        "segmented_text": "陈 师傅 用 铁皮 做 8 节 同样 大小 的 圆柱形 通风管 ， 直径 是 20 厘米 ， 每节 长 40 厘米 ． 一 共用 铁皮 多少 平方厘米 ？ （ 接头处 不计 ）",
+        "equation": "x=circumference_diameter(20)*40*8",
+        "ans": "20096",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*20*40*8"
+        ]
+    },
+    {
+        "id": 239,
+        "original_text": "某学校用长9米，宽6米的长方形红布，裁剪成面积0.3平方米的直角三角形小旗，可以裁多少面？",
+        "segmented_text": "某 学校 用 长 9 米 ， 宽 6 米 的 长方形 红布 ， 裁剪 成 面积 0.3 平方米 的 直角三角形 小旗 ， 可以 裁 多少 面 ？",
+        "equation": "x=rectangle_area(9, 6)/0.3",
+        "ans": "180",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=9*6/0.3"
+        ]
+    },
+    {
+        "id": 240,
+        "original_text": "用两个长3厘米、宽2厘米、高1厘米的长方体，拼成一个表面积最小的长方体，这个长方体的表面积=多少平方厘米？",
+        "segmented_text": "用 两个 长 3 厘米 、 宽 2 厘米 、 高 1 厘米 的 长方体 ， 拼成 一个 表面积 最小 的 长方体 ， 这个 长方体 的 表面积 = 多少 平方厘米 ？",
+        "equation": "x=cuboid_surface(3, 2, 1*2)",
+        "ans": "32",
+        "knowledge": [
+            "(cuboid, (length * width + length * height + width * height) * 2 = surface_area)"
+        ],
+        "history": [
+            "x=(2*2+2*3+2*3)*2"
+        ]
+    },
+    {
+        "id": 241,
+        "original_text": "一个长方形，长(12/5)米，比宽多(3/4)米，宽=多少米．",
+        "segmented_text": "一 个 长方形 ， 长 (12/5) 米 ， 比 宽 多 (3/4) 米 ， 宽 = 多少 米 ．",
+        "equation": "x=(12/5)-(3/4)",
+        "ans": "((33)/(20))",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 242,
+        "original_text": "“6一”节那天，新华公园举行庆祝活动，其中有一个活动是用铁丝做几何图形框架．一根36米长的铁丝，小明用去(1/3)做了一个长方形框架，还剩多少米铁丝可以做正方形框架？",
+        "segmented_text": "“ 6 一 ” 节 那天 ， 新华 公园 举行 庆祝 活动 ， 其中 有 一个 活动 是 用 铁丝 做 几何图形 框架 ． 一根 36 米 长 的 铁丝 ， 小 明 用 去 (1/3) 做 了 一个 长方形 框架 ， 还 剩 多少 米 铁丝 可以 做 正方形 框架 ？",
+        "equation": "x=36*(1-(1/3))",
+        "ans": "24",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 243,
+        "original_text": "在一座桥上，两侧各有20块广告牌，每块长3米，宽2米．两块广告牌之间相距5米，靠近桥两端的广告牌距离桥端是50米，求这座桥长多少米．",
+        "segmented_text": "在 一座 桥 上 ， 两侧 各 有 20 块 广告牌 ， 每块 长 3 米 ， 宽 2 米 ． 两块 广告牌 之间 相距 5 米 ， 靠近 桥 两端 的 广告牌 距离 桥 端 是 50 米 ， 求 这 座 桥 长 多少 米 ．",
+        "equation": "x=20*3+(20-1)*5+50*2",
+        "ans": "255",
+        "knowledge": [],
+        "history": [
+            "x=(20-1)*5+3*20+50*2"
+        ]
+    },
+    {
+        "id": 244,
+        "original_text": "把底面直径6cm，高5cm的圆柱沿底面直径切开，表面积增加了多少cm^2．",
+        "segmented_text": "把 底面 直径 6cm ， 高 5cm 的 圆柱 沿 底面 直径 切开 ， 表面积 增加 了 多少 cm ^ 2 ．",
+        "equation": "x=6*5*2",
+        "ans": "60",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 245,
+        "original_text": "一个圆柱形玻璃瓶，体积是75.36立方厘米，高是6厘米，它的底面积=．",
+        "segmented_text": "一 个 圆柱形 玻璃瓶 ， 体积 是 75.36 立方厘米 ， 高 是 6 厘米 ， 它 的 底 面积 = ．",
+        "equation": "x=75.36/6",
+        "ans": "12.56",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 246,
+        "original_text": "以4dm长的线段为公共边，在两侧分别画出高是6dm和8dm的两个三角形，这个组合图形的面积=多少dm^2．",
+        "segmented_text": "以 4dm 长 的 线段 为 公共 边 ， 在 两侧 分别 画 出 高 是 6dm 和 8dm 的 两个 三角形 ， 这个 组合 图形 的 面积 = 多少 dm ^ 2 ．",
+        "equation": "x=triangle_area(4, 6)+triangle_area(4, 8)",
+        "ans": "28",
+        "knowledge": [
+            "(triangle, base * height / 2 = area)"
+        ],
+        "history": [
+            "x=4*6/2+4*8/2"
+        ]
+    },
+    {
+        "id": 247,
+        "original_text": "一个平行四边形相邻的两条边的长度是3厘米和4厘米，它的周长=多少厘米．",
+        "segmented_text": "一 个 平行四边形 相邻 的 两条 边 的 长度 是 3 厘米 和 4 厘米 ， 它 的 周长 = 多少 厘米 ．",
+        "equation": "x=3+3+4+4",
+        "ans": "14",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 248,
+        "original_text": "一个直角三角形，它的两条直角边分别是6cm和8cm，它的面积=多少cm^2．",
+        "segmented_text": "一 个 直角三角形 ， 它 的 两条 直角 边 分别 是 6cm 和 8cm ， 它 的 面积 = 多少 cm ^ 2 ．",
+        "equation": "x=triangle_area(6, 8)",
+        "ans": "24",
+        "knowledge": [
+            "(triangle, base * height / 2 = area)"
+        ],
+        "history": [
+            "x=6*8/2"
+        ]
+    },
+    {
+        "id": 249,
+        "original_text": "用一张长31.4厘米，宽20厘米的长方形的纸围成一个圆柱体．圆柱体的侧面积=．",
+        "segmented_text": "用 一张 长 31.4 厘米 ， 宽 20 厘米 的 长方形 的 纸 围成 一个 圆柱体 ． 圆柱体 的 侧 面积 = ．",
+        "equation": "x=rectangle_area(31.4, 20)",
+        "ans": "628",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=31.4*20"
+        ]
+    },
+    {
+        "id": 250,
+        "original_text": "一捆电线有30圈，每圈的直径是0.6米，求电线的总长．",
+        "segmented_text": "一 捆 电线 有 30 圈 ， 每圈 的 直径 是 0.6 米 ， 求 电线 的 总长 ．",
+        "equation": "x=circumference_diameter(0.6)*30",
+        "ans": "56.52",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*0.6*30"
+        ]
+    },
+    {
+        "id": 251,
+        "original_text": "一张长方形的纸，(1/7)涂红色，(4/7)涂蓝色，没涂色的占这张纸的几分之几？",
+        "segmented_text": "一 张 长方形 的 纸 ， (1/7) 涂 红色 ， (4/7) 涂 蓝色 ， 没 涂色 的 占 这 张 纸 的 几分 之 几 ？",
+        "equation": "x=1-(1/7)-(4/7)",
+        "ans": "((2)/(7))",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 252,
+        "original_text": "一块长方形地长24千米，宽是长的(5/12)，这块地的面积=多少平方米．",
+        "segmented_text": "一 块 长方形 地 长 24 千米 ， 宽 是 长 的 (5/12) ， 这块 地 的 面积 = 多少 平方米 ．",
+        "equation": "x=rectangle_area(24, 24*(5/12))",
+        "ans": "240",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=24*(24*(5/12))"
+        ]
+    },
+    {
+        "id": 253,
+        "original_text": "一条环形跑道长400米，小明每分钟跑260米，小亮每分钟跑210米，两人同时同向出发，经过多少分钟两人相遇？",
+        "segmented_text": "一 条 环形 跑道 长 400 米 ， 小 明 每分钟 跑 260 米 ， 小 亮 每分钟 跑 210 米 ， 两 人 同时 同 向 出发 ， 经过 多少 分钟 两 人 相遇 ？",
+        "equation": "x=400/(260-210)",
+        "ans": "8",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 254,
+        "original_text": "贝贝到书店买笔记本，买5.9元一本的，差0.6元，他只好买4.8元一本的，剩下的钱正好买了一支圆珠笔．这支圆珠笔多少钱？",
+        "segmented_text": "贝 贝 到 书店 买 笔记本 ， 买 5.9 元 一本 的 ， 差 0.6 元 ， 他 只好 买 4.8 元 一本 的 ， 剩下 的 钱 正好 买 了 一支 圆珠笔 ． 这 支 圆珠笔 多少 钱 ？",
+        "equation": "x=5.9-0.6-4.8",
+        "ans": "0.5",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 255,
+        "original_text": "一个棱长是5分米的正方体鱼缸，里面装满水，把水倒入一个底面积50平方分米的长方体鱼缸里，长方体鱼缸里的水有多深？",
+        "segmented_text": "一 个 棱 长 是 5 分 米 的 正方体 鱼缸 ， 里面 装满水 ， 把 水 倒入 一个 底 面积 50 平方分米 的 长方体 鱼缸 里 ， 长方体 鱼缸 里 的 水 有多深 ？",
+        "equation": "x=cubic_volume(5)/50",
+        "ans": "2.5",
+        "knowledge": [
+            "(cubic, side * side * side = area)"
+        ],
+        "history": [
+            "x=5*5*5/50"
+        ]
+    },
+    {
+        "id": 256,
+        "original_text": "学校有一块800平方米实验田，用500平方米种豆角，剩余部分的40%种黄瓜，其余的全部种西红柿，种西红柿的面积=？",
+        "segmented_text": "学校 有 一块 800 平方米 实验田 ， 用 500 平方米 种 豆角 ， 剩余 部分 的 40% 种 黄瓜 ， 其余 的 全部种 西红柿 ， 种 西红柿 的 面积 = ？",
+        "equation": "x=(800-500)*(1-40%)",
+        "ans": "180",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 257,
+        "original_text": "一个长方形的宽是10厘米，长比宽多2厘米，则周长=多少厘米．",
+        "segmented_text": "一 个 长方形 的 宽 是 10 厘米 ， 长 比 宽 多 2 厘米 ， 则 周长 = 多少 厘米 ．",
+        "equation": "x=rectangle_perimeter(10+2, 10)",
+        "ans": "44",
+        "knowledge": [
+            "(rectangle, (length + width) * 2 = perimeter)"
+        ],
+        "history": [
+            "x=(10+2+10)*2"
+        ]
+    },
+    {
+        "id": 258,
+        "original_text": "地球的表面大部分被海洋覆盖，太平洋约占地球表面的(1/3)，大西洋约占地球表面的(1/5)．这两个洋的面积一共约占地球表面的几分之几？",
+        "segmented_text": "地球 的 表面 大部分 被 海洋 覆盖 ， 太平洋 约 占 地球表面 的 (1/3) ， 大西洋 约 占 地球表面 的 (1/5) ． 这 两个 洋 的 面积 一共 约 占 地球表面 的 几分 之 几 ？",
+        "equation": "x=(1/3)+(1/5)",
+        "ans": "((8)/(15))",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 259,
+        "original_text": "一张CD碟片的周长是37.68厘米，它的直径=多少厘米．",
+        "segmented_text": "一 张 CD 碟片 的 周长 是 37.68 厘米 ， 它 的 直径 = 多少 厘米 ．",
+        "equation": "x=37.68/3.14",
+        "ans": "12",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 260,
+        "original_text": "小明家有一间储藏室，从里面量长1.2米，宽0.7米，高2.4米，则这间储藏室的容积=多少立方米？",
+        "segmented_text": "小 明 家 有 一间 储藏室 ， 从 里面 量 长 1.2 米 ， 宽 0.7 米 ， 高 2.4 米 ， 则 这 间 储藏室 的 容积 = 多少 立方米 ？",
+        "equation": "x=cuboid_volume(1.2, 0.7, 2.4)",
+        "ans": "2.016",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=1.2*0.7*2.4"
+        ]
+    },
+    {
+        "id": 261,
+        "original_text": "一条环形跑道长400米，甲骑自行车每分钟450米，乙跑步每分钟250米，两人同时同地同向出发，经过多少分钟两人相遇？",
+        "segmented_text": "一 条 环形 跑道 长 400 米 ， 甲 骑 自行车 每分钟 450 米 ， 乙 跑步 每分钟 250 米 ， 两 人 同时 同 地 同 向 出发 ， 经过 多少 分钟 两 人 相遇 ？",
+        "equation": "x=400/(450-250)",
+        "ans": "2",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 262,
+        "original_text": "学校食堂的操作间长10米，宽8米，共铺地砖960块，平均每平方米铺了多少块地砖？（列综合算式解答）",
+        "segmented_text": "学校食堂 的 操作间 长 10 米 ， 宽 8 米 ， 共 铺地砖 960 块 ， 平均 每平方米 铺 了 多少 块 地砖 ？ （ 列 综合 算式 解答 ）",
+        "equation": "x=960/rectangle_area(10, 8)",
+        "ans": "12",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=960/(10*8)"
+        ]
+    },
+    {
+        "id": 263,
+        "original_text": "张老师买了5支圆珠笔和4本笔记本，共用去23.7元，每本笔记本2.8元，每支圆珠笔多少钱？",
+        "segmented_text": "张老师 买 了 5 支 圆珠笔 和 4 本 笔记本 ， 共用 去 23.7 元 ， 每 本 笔记本 2.8 元 ， 每支 圆珠笔 多少 钱 ？",
+        "equation": "x=(23.7-2.8*4)/5",
+        "ans": "2.5",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 264,
+        "original_text": "一块长方形菜地，宽是20米，长比宽多(1/4)，问这块菜地的面积=？",
+        "segmented_text": "一 块 长方形 菜地 ， 宽 是 20 米 ， 长 比 宽 多 (1/4) ， 问 这块 菜地 的 面积 = ？",
+        "equation": "x=rectangle_area(20*(1+(1/4)), 20)",
+        "ans": "500",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=20*(1+(1/4))*20"
+        ]
+    },
+    {
+        "id": 265,
+        "original_text": "挖一个长4米，宽3米，深2米的地窖，这个地窖占地多少平方米．",
+        "segmented_text": "挖 一个 长 4 米 ， 宽 3 米 ， 深 2 米 的 地窖 ， 这个 地窖 占地 多少 平方米 ．",
+        "equation": "x=rectangle_area(4, 3)",
+        "ans": "12",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=4*3"
+        ]
+    },
+    {
+        "id": 266,
+        "original_text": "为缓解道路拥挤的情况，我市国道正在进行道路拓宽，由原来的18米拓宽到24米，拓宽了((())/(()))．",
+        "segmented_text": "为 缓解 道路 拥挤 的 情况 ， 我市 国道 正在 进行 道路 拓宽 ， 由 原来 的 18 米 拓宽 到 24 米 ， 拓宽 了 ( ( ( ) ) / ( ( ) ) ) ．",
+        "equation": "x=(24-18)/18",
+        "ans": "((1)/(3))",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 267,
+        "original_text": "实验小学要把一种棱长5dm的正方体纸箱的每一个面都贴上红纸，用来做“爱心捐款箱”．要做这样的6个纸箱，至少需要多少平方分米的红纸？",
+        "segmented_text": "实验 小学 要 把 一种 棱 长 5dm 的 正方体 纸箱 的 每 一个 面 都 贴 上 红纸 ， 用来 做 “ 爱心 捐款箱 ” ． 要 做 这样 的 6 个 纸箱 ， 至少 需要 多少 平方分米 的 红纸 ？",
+        "equation": "x=square_area(5)*6*6",
+        "ans": "900",
+        "knowledge": [
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=5*5*6*6"
+        ]
+    },
+    {
+        "id": 268,
+        "original_text": "用一张长10厘米，宽5厘米的长方形纸，围成一个圆柱，这个圆柱体的侧面积=多少平方厘米．",
+        "segmented_text": "用 一张 长 10 厘米 ， 宽 5 厘米 的 长方形 纸 ， 围成 一个 圆柱 ， 这个 圆柱体 的 侧 面积 = 多少 平方厘米 ．",
+        "equation": "x=rectangle_area(10, 5)",
+        "ans": "50",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=10*5"
+        ]
+    },
+    {
+        "id": 269,
+        "original_text": "一个教室的长是8米，宽是6米，高是4米．要粉刷教室的天花板和4周，除去门窗面积30米^2，要粉刷多大的面积？",
+        "segmented_text": "一 个 教室 的 长 是 8 米 ， 宽 是 6 米 ， 高 是 4 米 ． 要 粉刷 教室 的 天花板 和 4 周 ， 除去 门窗 面积 30 米 ^ 2 ， 要 粉刷 多 大 的 面积 ？",
+        "equation": "x=cuboid_surface(8, 6, 4)-rectangle_area(8, 6)-30",
+        "ans": "130",
+        "knowledge": [
+            "(cuboid, (length * width + length * height + width * height) * 2 = surface_area)",
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=8*6+8*4*2+6*4*2-30"
+        ]
+    },
+    {
+        "id": 270,
+        "original_text": "一根长方体木料，长5m，横截面的面积是0.08dm^2．如果把这根木料截成两段，表面积就增加多少．",
+        "segmented_text": "一 根 长方体 木料 ， 长 5m ， 横截面 的 面积 是 0.08dm ^ 2 ． 如果 把 这根 木料 截 成 两段 ， 表面积 就 增加 多少 ．",
+        "equation": "x=0.08*2",
+        "ans": "0.16",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 271,
+        "original_text": "一块正方形的铁皮板的边长是50厘米，按照需要，要把它分割成面积比为3：7的两部分．则较大一块的面积=多少平方厘米？",
+        "segmented_text": "一 块 正方形 的 铁皮 板 的 边长 是 50 厘米 ， 按照 需要 ， 要 把 它 分割 成 面积 比 为 3 ： 7 的 两 部分 ． 则 较大 一块 的 面积 = 多少 平方厘米 ？",
+        "equation": "x=square_area(50)*((7)/(3+7))",
+        "ans": "1750",
+        "knowledge": [
+            "(square, side * side = area)"
+        ],
+        "history": [
+            "x=50*50*((7)/(3+7))"
+        ]
+    },
+    {
+        "id": 272,
+        "original_text": "正方形的周长增加4厘米，它的边长增加多少厘米．",
+        "segmented_text": "正方形 的 周长 增加 4 厘米 ， 它 的 边长 增加 多少 厘米 ．",
+        "equation": "x=4/4",
+        "ans": "1",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 273,
+        "original_text": "一个圆柱体，底面半径是2厘米，高是6厘米，它的侧面积=多少平方厘米．",
+        "segmented_text": "一 个 圆柱体 ， 底面 半径 是 2 厘米 ， 高 是 6 厘米 ， 它 的 侧 面积 = 多少 平方厘米 ．",
+        "equation": "x=circumference_radius(2)*6",
+        "ans": "75.36",
+        "knowledge": [
+            "(circle, 2 * 3.14 * radius = circumference)"
+        ],
+        "history": [
+            "x=2*3.14*2*6"
+        ]
+    },
+    {
+        "id": 274,
+        "original_text": "甲、乙、丙3只蚂蚁爬行的速度之比是8：6：5，它们沿一个圆圈从同一点同时同向爬行，当它们首次同时回到出发点时，就结束爬行．问蚂蚁甲追上蚂蚁乙一共多少次（包括结束时刻）？",
+        "segmented_text": "甲 、 乙 、 丙 3 只 蚂蚁 爬行 的 速度 之 比 是 8 ： 6 ： 5 ， 它们 沿 一个 圆圈 从 同 一点 同时 同 向 爬行 ， 当 它们 首次 同时 回到 出发点 时 ， 就 结束 爬行 ． 问 蚂蚁 甲 追 上 蚂蚁 乙 一共 多少 次 （ 包括 结束 时刻 ） ？",
+        "equation": "x=8-6",
+        "ans": "2",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 275,
+        "original_text": "把一个底面直径4分米的圆柱体，截去一个高2分米的小圆柱体，原来的圆柱体表面积减少多少平方分米．",
+        "segmented_text": "把 一个 底面 直径 4 分 米 的 圆柱体 ， 截去 一个 高 2 分 米 的 小 圆柱体 ， 原来 的 圆柱体 表面积 减少 多少 平方分米 ．",
+        "equation": "x=circumference_diameter(4)*2",
+        "ans": "25.12",
+        "knowledge": [
+            "(circle, 3.14 * diameter = circumference)"
+        ],
+        "history": [
+            "x=3.14*4*2"
+        ]
+    },
+    {
+        "id": 276,
+        "original_text": "有一正方形操场，每边都栽种4棵树，4个角各种1棵．问共种树多少棵？",
+        "segmented_text": "有 一 正方形 操场 ， 每 边 都 栽种 4 棵 树 ， 4 个 角 各种 1 棵 ． 问 共 种树 多少 棵 ？",
+        "equation": "x=(4-1)*4",
+        "ans": "12",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 277,
+        "original_text": "用一个底面为边长8厘米的正方形，高为16厘米的长方体容器，测量一个铅锤的体积，容器中装的水距容器口还有2厘米．当铅垂放入容器中，有部分水溢出；当把铅锤取出后，水面比原来下降了5厘米．这个铅锤的体积=多少立方厘米？",
+        "segmented_text": "用 一个 底面 为 边长 8 厘米 的 正方形 ， 高 为 16 厘米 的 长方体 容器 ， 测量 一个 铅锤 的 体积 ， 容器 中 装 的 水 距 容器 口 还有 2 厘米 ． 当 铅垂 放入 容器 中 ， 有 部分 水 溢出 ； 当 把 铅锤 取出 后 ， 水面 比 原来 下降 了 5 厘米 ． 这个 铅锤 的 体积 = 多少 立方厘米 ？",
+        "equation": "x=cuboid_volume(8, 8, (5+2))",
+        "ans": "448",
+        "knowledge": [
+            "(cuboid, length * width * height = volume)"
+        ],
+        "history": [
+            "x=8*8*(5+2)"
+        ]
+    },
+    {
+        "id": 278,
+        "original_text": "把一个棱长6分米的正方体钢坯，锻造成一个底面积是9平方分米的长方体钢块，能锻造多厚？",
+        "segmented_text": "把 一个 棱 长 6 分 米 的 正方体 钢坯 ， 锻造 成 一个 底 面积 是 9 平方分米 的 长方体 钢 块 ， 能 锻造 多 厚 ？",
+        "equation": "x=cubic_volume(6)/9",
+        "ans": "24",
+        "knowledge": [
+            "(cubic, side * side * side = area)"
+        ],
+        "history": [
+            "x=6*6*6/9"
+        ]
+    },
+    {
+        "id": 279,
+        "original_text": "一个长方形的面积是10.8平方米，这个长方形的长是9米，它的宽=多少米？",
+        "segmented_text": "一 个 长方形 的 面积 是 10.8 平方米 ， 这个 长方形 的 长 是 9 米 ， 它 的 宽 = 多少 米 ？",
+        "equation": "x=10.8/9",
+        "ans": "1.2",
+        "knowledge": [],
+        "history": []
+    },
+    {
+        "id": 280,
+        "original_text": "一个圆锥形的沙堆，体积是28.26立方米，把这堆沙均匀地填在一个长5米，宽2米的长方形沙坑中，沙厚多少米？",
+        "segmented_text": "一 个 圆锥形 的 沙堆 ， 体积 是 28.26 立方米 ， 把 这 堆 沙 均匀 地 填 在 一个 长 5 米 ， 宽 2 米 的 长方形 沙坑 中 ， 沙 厚 多少 米 ？",
+        "equation": "x=28.26/(rectangle_area(5, 2))",
+        "ans": "2.826",
+        "knowledge": [
+            "(rectangle, length * width = area)"
+        ],
+        "history": [
+            "x=28.26/(5*2)"
+        ]
+    }
+]

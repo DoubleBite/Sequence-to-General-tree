@@ -17,8 +17,8 @@ This project is written based on `AllenNLP` and `Pytorch Geometric` frameworks.
 pip install allennlp
 ```
 
-2. If you want to try S2G+KG please follow the tutorial in the link below to install `Pytorch Geometric`  
-https://github.com/rusty1s/pytorch_geometric
+2. If you want to try S2G+KG, please follow the instructions in https://github.com/rusty1s/pytorch_geometric to install `Pytorch Geometric`  
+
 
 
 

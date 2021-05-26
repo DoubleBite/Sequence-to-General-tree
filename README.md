@@ -10,14 +10,14 @@ ACL paper
 ## Prerequisites
 
 This project is written based on `AllenNLP` and `Pytorch Geometric` frameworks.
-If you only want to try S2G, please install `AllenNLP`
+
+1. If you only want to try S2G, please install `AllenNLP` as follows:
 
 ```
 pip install allennlp
-
 ```
 
-If you want to try S2G+KG please follow the tutorial in the link below to install `Pytorch Geometric`  
+2. If you want to try S2G+KG please follow the tutorial in the link below to install `Pytorch Geometric`  
 https://github.com/rusty1s/pytorch_geometric
 
 

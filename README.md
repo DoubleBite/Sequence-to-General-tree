@@ -43,7 +43,7 @@ Here are the shell scripts to run the experiments.
 + `run_s2g.sh`: run **S2G** on GeometryQA.
 + `run_s2gkg.sh`: run **S2G+KG** on GeometryQA.
 
-We also provide `bucket_sampler`
+We also provide scripts to run the experiments using AllenNLP `bucket_sampler`.
 
 + `run_s2g_bucket.sh`: run **S2G** on GeometryQA using bucket_sampler.
 + `run_s2gkg_bucket.sh`: run **S2G+KG** on GeometryQA using bucket_sampler.

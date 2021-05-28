@@ -38,10 +38,14 @@ https://github.com/rusty1s/pytorch_geometric
 
 ## Run S2G / S2G+KG
 
-We provide
+Here are the shell scripts to run the experiments.
 
 + ``: run the configs in ....
++ ``: run the configs in ....
++ ``: run the configs in ....
++ ``: run the configs in ....
 
+To run the 
 ```
 bash run_.sh RESULT_DIR
 ```

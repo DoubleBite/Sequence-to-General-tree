@@ -43,10 +43,10 @@ Here are the shell scripts to run the experiments.
 + `run_s2g.sh`: run **S2G** on GeometryQA.
 + `run_s2gkg.sh`: run **S2G+KG** on GeometryQA.
 
-We also provide
+We also provide `bucket_sampler`
 
-+ `run_s2g_bucket.sh`: run the configs in ....
-+ `run_s2gkg_bucket.sh`: run the configs in ....
++ `run_s2g_bucket.sh`: run **S2G** on GeometryQA using bucket_sampler.
++ `run_s2gkg_bucket.sh`: run **S2G+KG** on GeometryQA using bucket_sampler.
 
 To run the shell scripts above, please use the following command. 
 ```

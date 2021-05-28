@@ -46,11 +46,11 @@ We provide
 bash run_.sh RESULT_DIR
 ```
 
+Using the following 
+```
+python evaluate.py results/s2g-tune/check_loss/ --five_fold
+```
 
+## Cite
 
-
-## Evaluate
-
-!python evaluate.py results/s2g-tune/check_loss/ --five_fold
-
-
+To be updated soon.

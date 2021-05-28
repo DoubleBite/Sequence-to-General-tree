@@ -14,8 +14,8 @@ We implement S2G using Pytorch and AllenNLP, and this repository is organized fo
 Here, we give a brief description of each folder/file and their content:
 
 + `**data`: 
-    + `geometryQA`:
-    + `geometryQA_5fold`:
+    + `geometryQA`: the GeometryQA dataset.
+    + `geometryQA_5fold`: the subsets of GeometryQA for 5-fold cross validation.
 + `libs`: the source code for `dataset_reader`, `models`, `modules`, and `tools`.
 + `configs`: the configuration files for different experiment settings.  
 + `run_xxx.sh`: the scripts to run the experiment settings defined in `configs`.

@@ -11,12 +11,14 @@ This is the official repository for the ACL 2021 paper "Sequence to General Tree
 ## Code and Data
 
 We implement S2G using Pytorch and AllenNLP, and this repository is organized following the standard AllenNLP setting.
-Here, we give a brief description of each folder and their content:
+Here, we give a brief description of each folder/file and their content:
 
++ `**data`: 
+    + `geometryQA`:
+    + `geometryQA_5fold`:
++ `libs`: the source code for `dataset_reader`, `models`, `modules`, and `tools`.
 + `configs`: the configuration files for different experiment settings.  
-+ `libs`:  containing the source code for `dataset_reader`, `models`, `modules`, and `tools`.
-+ *`data`: 
-while the data can be found in `data/`
++ `run_xxx.sh`: the scripts to run the experiment settings defined in `configs`.
 
 
 ## Prerequisites

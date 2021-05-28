@@ -10,7 +10,12 @@ This is the official repository for the ACL 2021 paper "Sequence to General Tree
 
 ## Code and Data
 
-We implement S2G using Pytorch and AllenNLP. The code is organized in 
+We implement S2G using Pytorch and AllenNLP, and this repository is organized following the standard AllenNLP setting.
+Here, we give a brief description of each folder and their content:
+
++ `libs`:  
++ `libs`:  
++ *`data`: 
 while the data can be found in `data/`
 
 

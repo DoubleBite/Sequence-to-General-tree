@@ -46,7 +46,8 @@ class Math23kReader(DatasetReader):
         num_token_type: Union[str, None] = None,
         occurrence_limit: bool = True,
         target_notation: str = "prefix",
-        target_namespace: str = "target_vocab",
+        target_namespace: str = "equation_vocab",
+        use_original_equation: bool = True,
         **kwargs
     ) -> None:
 
@@ -55,6 +56,7 @@ class Math23kReader(DatasetReader):
         self.occurrence_limit = occurrence_limit
         self.target_notation = target_notation  # Prefix, infix, postfix
         self._target_namespace = target_namespace
+        self._use_original_equation = use_original_equation
 
         self._source_token_indexers = {
             "tokens": SingleIdTokenIndexer()}
@@ -72,7 +74,10 @@ class Math23kReader(DatasetReader):
             for problem in dataset:
                 qid = problem["id"]
                 text = problem["segmented_text"]
-                equation = problem["equation"]
+                if self._use_original_equation and "history" in problem and len(problem["history"]) > 0:
+                    equation = problem["history"][0]
+                else:
+                    equation = problem["equation"]
                 answer = problem["ans"]
                 yield self.text_to_instance(qid, text, equation, answer)
 
@@ -127,4 +132,4 @@ class Math23kReader(DatasetReader):
         return Instance(fields)
 
 
-# def get 
+# def get

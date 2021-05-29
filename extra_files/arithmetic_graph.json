@@ -1,0 +1,194 @@
+[
+    {
+        "subgraph_name": "root",
+        "nodes": [
+            [
+                0,
+                {
+                    "name": "arith",
+                    "type": "root"
+                }
+            ]
+        ]
+    },
+    {
+        "subgraph_name": "addition",
+        "nodes": [
+            [
+                0,
+                {
+                    "name": "add",
+                    "type": "operator"
+                }
+            ],
+            [
+                1,
+                {
+                    "name": "arg1",
+                    "type": "argument"
+                }
+            ],
+            [
+                2,
+                {
+                    "name": "arg2",
+                    "type": "argument"
+                }
+            ]
+        ],
+        "edges": [
+            [
+                0,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ]
+    },
+    {
+        "subgraph_name": "subtraction",
+        "nodes": [
+            [
+                0,
+                {
+                    "name": "sub",
+                    "type": "operator"
+                }
+            ],
+            [
+                1,
+                {
+                    "name": "arg1",
+                    "type": "argument"
+                }
+            ],
+            [
+                2,
+                {
+                    "name": "arg2",
+                    "type": "argument"
+                }
+            ]
+        ],
+        "edges": [
+            [
+                0,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ]
+    },
+    {
+        "subgraph_name": "multiplication",
+        "nodes": [
+            [
+                0,
+                {
+                    "name": "mult",
+                    "type": "operator"
+                }
+            ],
+            [
+                1,
+                {
+                    "name": "arg1",
+                    "type": "argument"
+                }
+            ],
+            [
+                2,
+                {
+                    "name": "arg2",
+                    "type": "argument"
+                }
+            ]
+        ],
+        "edges": [
+            [
+                0,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ]
+    },
+    {
+        "subgraph_name": "division",
+        "nodes": [
+            [
+                0,
+                {
+                    "name": "div",
+                    "type": "operator"
+                }
+            ],
+            [
+                1,
+                {
+                    "name": "arg1",
+                    "type": "argument"
+                }
+            ],
+            [
+                2,
+                {
+                    "name": "arg2",
+                    "type": "argument"
+                }
+            ]
+        ],
+        "edges": [
+            [
+                0,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ]
+    },
+    {
+        "subgraph_name": "power",
+        "nodes": [
+            [
+                0,
+                {
+                    "name": "pow",
+                    "type": "operator"
+                }
+            ],
+            [
+                1,
+                {
+                    "name": "arg1",
+                    "type": "argument"
+                }
+            ],
+            [
+                2,
+                {
+                    "name": "arg2",
+                    "type": "argument"
+                }
+            ]
+        ],
+        "edges": [
+            [
+                0,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ]
+    }
+]

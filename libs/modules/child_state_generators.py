@@ -3,13 +3,13 @@ from overrides import overrides
 
 import torch
 import torch.nn as nn
-from torch.nn import LSTMCell
+from torch.nn import GRUCell, LSTMCell
 
 from allennlp.common import Registrable
 from allennlp.nn import util
 
 
-class TreeDecoder(torch.nn.Module, Registrable):
+class ChildStateGenerator(torch.nn.Module, Registrable):
 
     """
     This class abstracts the neural architectures for decoding the encoded states and
@@ -73,138 +73,117 @@ class TreeDecoder(torch.nn.Module, Registrable):
         raise NotImplementedError()
 
 
-@TreeDecoder.register("lstm")
-class LstmTreeDecoder(TreeDecoder):
+@ChildStateGenerator.register("binary")
+class BinaryGenerator(ChildStateGenerator):
     """
-    This decoder net implements simple decoding network with LSTMCell and Attention.
-    # Parameters
-    decoding_dim : `int`, required
-        Defines dimensionality of output vectors.
-    target_embedding_dim : `int`, required
-        Defines dimensionality of input target embeddings.  Since this model takes it's output on a previous step
-        as input of following step, this is also an input dimensionality.
-    attention : `Attention`, optional (default = `None`)
-        If you want to use attention to get a dynamic summary of the encoder outputs at each step
-        of decoding, this is the function used to compute similarity between the decoder hidden
-        state and encoder outputs.
+
     """
 
     def __init__(
         self,
-        decoder_input_dim: int,
-        decoder_output_dim: int,
-    ) -> None:
-
-        super().__init__(
-            decoder_input_dim=decoder_input_dim,
-            decoder_output_dim=decoder_output_dim,
-        )
-
-        # We'll use an LSTM cell as the recurrent cell that produces a hidden state
-        # for the decoder at each time step.
-        self._decoder_cell = LSTMCell(
-            self.decoder_input_dim, self.decoder_output_dim)
-
-    @overrides
-    def forward(
-        self,
-        projected_decoder_intput: torch.Tensor,
-        previous_state: torch.Tensor,
-        num_step: int = None,
-    ) -> Tuple[Dict[str, torch.Tensor], torch.Tensor]:
-
-        decoder_hidden, decoder_context = previous_state
-
-        child_hidden_states = []
-        child_context_states = []
-        for _ in range(num_step):
-            # shape (decoder_hidden): (batch_size, decoder_output_dim)
-            # shape (decoder_context): (batch_size, decoder_output_dim)
-            decoder_hidden, decoder_context = self._decoder_cell(
-                projected_decoder_intput.float(), (decoder_hidden.float(), decoder_context.float())
-            )
-            child_hidden_states.append(decoder_hidden)
-            child_context_states.append(decoder_context)
-
-        if child_context_states:
-            child_hidden_states = torch.stack(
-                child_hidden_states).transpose(0, 1)
-            child_context_states = torch.stack(
-                child_context_states).transpose(0, 1)
-
-        return child_hidden_states, child_context_states
-
-    @overrides
-    def is_lstm(self):
-        return True
-
-
-@TreeDecoder.register("gts")
-class GTSTreeDecoder(TreeDecoder):
-    """
-    This decoder net implements simple decoding network with LSTMCell and Attention.
-    # Parameters
-    decoding_dim : `int`, required
-        Defines dimensionality of output vectors.
-    target_embedding_dim : `int`, required
-        Defines dimensionality of input target embeddings.  Since this model takes it's output on a previous step
-        as input of following step, this is also an input dimensionality.
-    attention : `Attention`, optional (default = `None`)
-        If you want to use attention to get a dynamic summary of the encoder outputs at each step
-        of decoding, this is the function used to compute similarity between the decoder hidden
-        state and encoder outputs.
-    """
-
-    def __init__(
-        self,
+        input_size,
+        hidden_size,
+        dropout=0.5
     ) -> None:
 
         super().__init__(
         )
-
-        # We'll use an LSTM cell as the recurrent cell that produces a hidden state
-        # for the decoder at each time step.
-        embedding_size = 300
-        hidden_size = 512
-        dropout = 0.5
 
         self.em_dropout = nn.Dropout(dropout)
         self.generate_l = nn.Linear(
-            hidden_size * 3 + embedding_size, hidden_size)
+            hidden_size * 2 + input_size, hidden_size)
         self.generate_r = nn.Linear(
-            hidden_size * 3 + embedding_size, hidden_size)
+            hidden_size * 2 + input_size, hidden_size)
         self.generate_lg = nn.Linear(
-            hidden_size * 3 + embedding_size, hidden_size)
+            hidden_size * 2 + input_size, hidden_size)
         self.generate_rg = nn.Linear(
-            hidden_size * 3 + embedding_size, hidden_size)
+            hidden_size * 2 + input_size, hidden_size)
 
     @overrides
     def forward(
         self,
-        embedded_decoder_intput: torch.Tensor,
-        selective_read: torch.Tensor,
+        current_state: torch.Tensor,
         current_context: torch.Tensor,
-        previous_state: torch.Tensor,
+        current_input: torch.Tensor,
     ) -> Tuple[Dict[str, torch.Tensor], torch.Tensor]:
 
-        embedded_decoder_intput = self.em_dropout(embedded_decoder_intput)
-        selective_read = self.em_dropout(selective_read)
-        previous_state = self.em_dropout(previous_state)
+        current_state = self.em_dropout(current_state)
         current_context = self.em_dropout(current_context)
+        current_input = self.em_dropout(current_input)
+
+        current_state = current_state.squeeze(1)
+        current_context = current_context.squeeze(1)
 
         l_child = torch.tanh(self.generate_l(
-            torch.cat((previous_state, selective_read, current_context, embedded_decoder_intput), 1)))
+            torch.cat((current_state, current_context, current_input), 1)))
         l_child_g = torch.sigmoid(self.generate_lg(
-            torch.cat((previous_state, selective_read, current_context, embedded_decoder_intput), 1)))
+            torch.cat((current_state, current_context, current_input), 1)))
         r_child = torch.tanh(self.generate_r(
-            torch.cat((previous_state, selective_read, current_context, embedded_decoder_intput), 1)))
+            torch.cat((current_state, current_context, current_input), 1)))
         r_child_g = torch.sigmoid(self.generate_rg(
-            torch.cat((previous_state, selective_read, current_context, embedded_decoder_intput), 1)))
+            torch.cat((current_state, current_context, current_input), 1)))
         l_child = l_child * l_child_g
         r_child = r_child * r_child_g
 
-        #
+        # Shape: (batch_size, 2, hidden_size)
         child_states = torch.cat(
             (l_child.unsqueeze(-2), r_child.unsqueeze(-2)), -2)
+
+        return child_states
+
+
+@ChildStateGenerator.register("gru")
+class GRUGenerator(ChildStateGenerator):
+    """
+    This decoder net implements simple decoding network with LSTMCell and Attention.
+    # Parameters
+    decoding_dim : `int`, required
+        Defines dimensionality of output vectors.
+    target_embedding_dim : `int`, required
+        Defines dimensionality of input target embeddings.  Since this model takes it's output on a previous step
+        as input of following step, this is also an input dimensionality.
+    attention : `Attention`, optional (default = `None`)
+        If you want to use attention to get a dynamic summary of the encoder outputs at each step
+        of decoding, this is the function used to compute similarity between the decoder hidden
+        state and encoder outputs.
+    """
+
+    def __init__(
+        self,
+        input_size: int,
+        hidden_size: int,
+    ) -> None:
+
+        super().__init__()
+
+        # We'll use an LSTM cell as the recurrent cell that produces a hidden state
+        # for the decoder at each time step.
+        self._generator = GRUCell(input_size, hidden_size)
+        self._projection = nn.Linear(2*hidden_size, hidden_size)
+
+    @overrides
+    def forward(
+        self,
+        current_state: torch.Tensor,
+        current_context: torch.Tensor,
+        current_input: torch.Tensor,
+        num_step: int = 3,
+    ) -> Tuple[Dict[str, torch.Tensor], torch.Tensor]:
+
+        current_state = current_state.squeeze(1)
+        current_context = current_context.squeeze(1)
+
+        current_state = self._projection(
+            torch.cat([current_state, current_context], -1))
+
+        child_states = []
+        state = current_state
+        for _ in range(num_step):
+            state = self._generator(
+                current_input, state)
+            child_states.append(state)
+
+        child_states = torch.stack(
+            child_states).transpose(0, 1)
 
         return child_states

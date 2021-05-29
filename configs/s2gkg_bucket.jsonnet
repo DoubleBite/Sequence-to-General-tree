@@ -1,5 +1,4 @@
-local equation_vocab_str = importstr '../extra_files/equation_vocab.txt';
-local number_of_branches = import '../extra_files/number_of_branches.jsonnet';
+local number_of_branch_map = import '../extra_files/number_of_branches.jsonnet';
 {
     "train_data_path": "data/geometry_5fold/fold0_train.json",
     "dataset_reader": {
@@ -9,9 +8,9 @@ local number_of_branches = import '../extra_files/number_of_branches.jsonnet';
         // "max_instances": 1000 // DEBUG setting
     },
     "vocabulary":{
-        "min_count": {
-            "tokens": 5,
-        },
+       "min_count": {
+           "tokens": 5,
+       },
        "pretrained_files": {
            "target_vocab": "extra_files/equation_vocab.txt",
        },
@@ -19,11 +18,9 @@ local number_of_branches = import '../extra_files/number_of_branches.jsonnet';
     },
     "model": {
         "type": "S2G-KG",
-        "target_namespace": "target_vocab",
-        "number_of_branch_map": number_of_branches,
-        "max_decoding_steps": 20,
-        "beam_size": 1,
-        "child_generator":{
+        "target_namespace": "equation_vocab",
+        "number_of_branch_map": number_of_branch_map,
+        "child_node_generator":{
             "type": "gru",
             "input_size": 128,
             "hidden_size": 512

@@ -7,11 +7,13 @@ import logging
 from typing import Dict, Tuple, List, Any, Union
 from collections import defaultdict
 import copy
+import json
 
 # Numpy and torch
 import numpy
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 # Allennlp classes and functions
 from overrides import overrides
@@ -20,19 +22,26 @@ from allennlp.models.model import Model
 from allennlp.modules.token_embedders import Embedding
 from allennlp.nn import InitializerApplicator, util
 
-# Self-defined packages
+# Self-defined
 from libs.models.sequence_to_tree_base import Seq2Tree
 from libs.modules.gts_modules import Prediction, Merge, EncoderSeq
 from libs.modules.child_node_generators import ChildNodeGenerator
+from libs.modules.decoder import Prediction
 from libs.tools.gts_utils import TreeNode, masked_cross_entropy, TreeEmbedding, generate_tree_input
 from libs.tools.gts_utils import get_all_number_encoder_outputs, TreeBeam, copy_list
+
+# Packages for KG
+from torch_geometric.data import Data
+from libs.modules.GNNs import GNN
+from libs.tools.graph_utils import create_KGs_with_id_table, formula_to_args
+from torch_geometric.utils import add_self_loops, to_undirected
 
 
 logger = logging.getLogger(__name__)
 
 
-@Model.register("S2G-test")
-class Seq2GeneralTreeTest(Seq2Tree):
+@Model.register("S2G-KG")
+class Seq2GeneralTreeKG(Seq2Tree):
     """
     Some descriptions
 
@@ -51,6 +60,8 @@ class Seq2GeneralTreeTest(Seq2Tree):
         embedding_size: int = 128,
         hidden_size: int = 512,
         beam_size: int = 5,
+        GNN_dim: int = 64,
+        GNN_out: int = 32,
         initializer: InitializerApplicator = InitializerApplicator(),
     ) -> None:
         super().__init__(vocab, target_namespace)
@@ -62,8 +73,6 @@ class Seq2GeneralTreeTest(Seq2Tree):
         self._source_vocab_size = self.vocab.get_vocab_size("tokens")
         self.encoder = EncoderSeq(input_size=self._source_vocab_size, embedding_size=embedding_size, hidden_size=hidden_size,
                                   n_layers=2)
-        self.predict = Prediction(hidden_size=hidden_size, op_nums=self.num_operations,
-                                  input_size=self.num_constants)
         self._target_embedder = Embedding(
             num_embeddings=self.num_operations, embedding_dim=embedding_size)
         self.merge = Merge(hidden_size=hidden_size,
@@ -72,8 +81,27 @@ class Seq2GeneralTreeTest(Seq2Tree):
         # The generator to generate arbitrary number of child states
         self.generator = child_node_generator
 
+        # Prediction module with GNN input
+        self.predict = Prediction(hidden_size=hidden_size, op_nums=self.num_operations,
+                                  input_size=self.num_constants, GNN_out=GNN_out)
+
         # At prediction time, we'll use a beam search to find the best target sequence.
         self._beam_size = beam_size
+
+        # KG
+        with open("extra_files/arithmetic_graph.json", 'r') as f:
+            operator_graphs = json.load(f)
+        with open("extra_files/geometry_graph.json", 'r') as f:
+            geometry_graphs = json.load(f)
+        self.kg, self.nodes, self.edges, self.node_name_to_id = create_KGs_with_id_table(
+            operator_graphs, geometry_graphs)
+        self.kg_embedder = nn.Embedding(
+            len(self.nodes), embedding_size)
+        self.GNN_dim = GNN_dim
+        self.GNN_out = GNN_out
+        self.GNN = GNN(embedding_size, GNN_dim, self.GNN_out)
+        self.kg_embedding = None
+        self.problem_classifier = nn.Linear(hidden_size, self.GNN_out)
 
         initializer(self)
 
@@ -87,6 +115,7 @@ class Seq2GeneralTreeTest(Seq2Tree):
         """
 
         """
+        self.embed_kg(source_tokens["tokens"]["tokens"].device)
 
         output_dict = {}
 
@@ -150,6 +179,11 @@ class Seq2GeneralTreeTest(Seq2Tree):
         all_nums_encoder_outputs = get_all_number_encoder_outputs(encoder_outputs, number_positions, batch_size, max_num_size,
                                                                   hidden_size)
 
+        # KG
+        problem_types = F.relu(self.problem_classifier(problem_output))
+        all_knowledge_embeddings = [
+            [x] for x in problem_types.split(1, dim=0)]
+
         # Prepare containers for tree generation
         all_node_outputs = []
         node_stacks = [[TreeNode(_)] for _ in problem_output.split(1, dim=0)]
@@ -157,11 +191,13 @@ class Seq2GeneralTreeTest(Seq2Tree):
         embeddings_stacks = [[] for _ in range(batch_size)]
         padding_hidden = encoder_outputs.new_zeros(1, hidden_size)
 
-        # Start tree generation
         for t in range(max_target_length):
 
+            tmp = [x.pop() if len(x) > 0 else target_tokens.new_zeros([1, self.GNN_out])
+                   for x in all_knowledge_embeddings]
+            knowledge_representations = torch.stack(tmp, 0)
             num_score, op, current_embeddings, current_context, current_nums_embeddings = self.predict(
-                node_stacks, left_childs, encoder_outputs, all_nums_encoder_outputs, padding_hidden, source_mask_inverse, num_mask)
+                node_stacks, left_childs, encoder_outputs, all_nums_encoder_outputs, padding_hidden, source_mask_inverse, num_mask, knowledge_representations)
 
             # Prediction for op and pseudo tokens
             outputs = torch.cat((op, num_score), 1)
@@ -200,6 +236,10 @@ class Seq2GeneralTreeTest(Seq2Tree):
                     # Different nodes have different number of children. We need to look it up.
                     num_of_children = self._get_number_of_children(i)
                     child_states = child_states[:num_of_children]
+
+                    kg_embeddings = self.get_child_kg_embeddings(i)
+                    assert len(kg_embeddings) == num_of_children
+                    all_knowledge_embeddings[idx].extend(kg_embeddings)
 
                     # Append the child states to the stack
                     for ii, child_state in enumerate(reversed(child_states)):
@@ -290,6 +330,11 @@ class Seq2GeneralTreeTest(Seq2Tree):
             all_nums_encoder_outputs = get_all_number_encoder_outputs(encoder_outputs, [num_pos], batch_size, num_size,
                                                                       hidden_size)
 
+            # KG
+            problem_types = F.relu(self.problem_classifier(problem_output))
+            all_knowledge_embeddings = [
+                [x] for x in problem_types.split(1, dim=0)]
+
             # Prepare containers for tree generation
             node_stacks = [[TreeNode(_)]
                            for _ in problem_output.split(1, dim=0)]
@@ -297,7 +342,7 @@ class Seq2GeneralTreeTest(Seq2Tree):
             left_childs = [None for _ in range(batch_size)]
 
             beams = [
-                TreeBeam(0.0, node_stacks, embeddings_stacks, left_childs, [])]
+                TreeBeam(0.0, node_stacks, embeddings_stacks, left_childs, [], all_knowledge_embeddings)]
 
             for t in range(max_length):
 
@@ -310,9 +355,15 @@ class Seq2GeneralTreeTest(Seq2Tree):
                     # left_childs = torch.stack(b.left_childs)
                     left_childs = b.left_childs
 
+                    # KG
+                    all_knowledge_embeddings = b.knows
+                    tmp = [x.pop()
+                           for x in all_knowledge_embeddings]
+                    knowledge_representations = torch.stack(tmp, 0)
+
                     num_score, op, current_embeddings, current_context, current_nums_embeddings = self.predict(
                         b.node_stack, left_childs, encoder_outputs, all_nums_encoder_outputs, padding_hidden,
-                        source_mask, num_mask)
+                        source_mask, num_mask, knowledge_representations)
 
                     out_score = nn.functional.log_softmax(
                         torch.cat((op, num_score), dim=1), dim=1)
@@ -331,6 +382,9 @@ class Seq2GeneralTreeTest(Seq2Tree):
 
                         node = current_node_stack[0].pop()
 
+                        # KG
+                        current_know = copy_list(b.knows)
+
                         # If the node is an operator or formula
                         if out_token < self.num_start_id:
 
@@ -346,6 +400,13 @@ class Seq2GeneralTreeTest(Seq2Tree):
                             num_of_children = self._get_number_of_children(
                                 out_token)
                             child_states = child_states[0][:num_of_children]
+
+                            # KG
+                            kg_embeddings = self.get_child_kg_embeddings(
+                                out_token)
+                            assert len(kg_embeddings) == num_of_children
+                            current_know[0].extend(
+                                kg_embeddings)
 
                             for ii, child_state in enumerate(reversed(child_states)):
                                 child_state = child_state.unsqueeze(0)
@@ -398,7 +459,7 @@ class Seq2GeneralTreeTest(Seq2Tree):
                         else:
                             current_left_childs.append(None)
                         current_beams.append(TreeBeam(b.score+float(tv), current_node_stack, current_embeddings_stacks,
-                                                      current_left_childs, current_out))
+                                                      current_left_childs, current_out, current_know))
                 beams = sorted(
                     current_beams, key=lambda x: x.score, reverse=True)
                 beams = beams[:self._beam_size]
@@ -411,29 +472,39 @@ class Seq2GeneralTreeTest(Seq2Tree):
             prediction.append([beams[0].out])
         return {"prediction": prediction}
 
-    # def _initialize_number_of_branch_map(self, number_of_branch_map):
-    #     """
+    def embed_kg(self, device):
+        edge_index = torch.tensor(
+            self.edges, dtype=torch.long, device=device).t().contiguous()
+        edge_index = to_undirected(edge_index)
+        edge_index, _ = add_self_loops(edge_index)
+        # To undirected and add self loops
+        kg_nodes = torch.tensor(self.nodes, device=device)
 
-    #     """
-    #     #
-    #     number_of_branches = torch.zeros(
-    #         self._target_size, 1)
+        x = self.kg_embedder(kg_nodes)
+        # print(edge_index)
+        features = self.GNN(Data(x=x, edge_index=edge_index))
+        features = features.split(1)
 
-    #     for node_type, num in number_of_branch_map.items():
-    #         if node_type in self.token_to_new_id:
-    #             index = self.token_to_new_id[node_type]
-    #             number_of_branches[index] = num
+        assert len(self.node_name_to_id) == len(features)
 
-    #     return number_of_branches
+        self.kg_embedding = {name: features[idx]
+                             for name, idx in self.node_name_to_id.items()}
+        self.kg_embedding.update({
+            "+": self.kg_embedding["add"],
+            "-": self.kg_embedding["sub"],
+            "*": self.kg_embedding["mult"],
+            "/": self.kg_embedding["div"],
+            "^": self.kg_embedding["pow"],
+        })
+        # print(self.kg_embedding.keys())
 
-    # def _get_input_number_of_branches(self, input_indices):
-    #     """
-    #     """
-    #     # return [self.number_of_branch_map[self.new_id_to_token[x.item()]] for x in input_indices]
-    #     return torch.index_select(
-    #         self._number_of_branches.to(
-    #             device=input_indices.device), 0, input_indices
-    #     ).contiguous().int()
+        return features
+
+    def get_child_kg_embeddings(self, input_index):
+        formula = self.new_id_to_token[input_index]
+        args = formula_to_args[formula]
+        embeddings = [self.kg_embedding[x] for x in reversed(args)]
+        return embeddings
 
     def _get_number_of_children(self, node_id):
         """

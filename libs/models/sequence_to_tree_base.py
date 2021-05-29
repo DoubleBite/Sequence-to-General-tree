@@ -2,6 +2,7 @@ import logging
 from typing import Dict, Tuple, List, Any, Union
 from overrides import overrides
 import re
+import copy
 
 import numpy
 import torch
@@ -39,12 +40,12 @@ class Seq2Tree(Model):
         We also define the AllenNLP utility function `make_output_human_readable()` here, since it will use the above
         functions to convert the model predictions (ids) to their original tokens. 
 
-    2. Prepare the candidate numbers for copying:
+    2. Prepare the positions of the candidate numbers for copying:
         For the numbers that appear only once in the problem text. We replace them with corresponding pseudo tokens 
         and train our model to predict them in the equation, such as predicting "<N0> + <N1>" for "3 + 2".
         However, for numbers that appear more than one time. We do not replace them with pseudo tokens but would collect 
-        them in a candidate list and use copy mechanism to select them directly. Hence, we need to prepare the candidate
-        numbers for copying. Details please refer to `generate_num_stack()`.
+        them in a candidate list and use copy mechanism to select them directly. Hence, we need to prepare the positions of 
+        the candidate numbers for copying. Details please refer to `get_copy_positions()`.
 
 
     Args:
@@ -80,6 +81,9 @@ class Seq2Tree(Model):
         # which follows immediately after the ids of operators and formulas.
         # We need to know this id to do offset.
         self.num_start_id = len(self.ops)
+
+        # Unknown id
+        self.unk_id = self.token_to_new_id["@@UNKNOWN@@"]
 
     def get_vocab_groups(self):
         """
@@ -220,18 +224,17 @@ class Seq2Tree(Model):
     #     return encoder_outputs.transpose(0, 1), problem_output
     #     # return {"source_mask": source_mask, "encoder_outputs": encoder_outputs}
 
-    def generate_num_stack(self, batch_metadata):
+    def get_copy_positions(self, batch_metadata):
         """
-        Get the position of the candidate numbers for copying. Here we call it num_stack.
-
+        Get the position of the candidate numbers for copying.
         This function is adapted from: https://github.com/ShichaoSun/math_seq2tree/blob/master/src/pre_data.py
-        We also add a cache mechanism to avoid generate the same num_stacks.
         """
 
-        batch_num_stack = []
+        batch_copy_positions = []
 
         for metadata in batch_metadata:
-            num_stack = []
+
+            copy_positions = []
             for token in metadata["target_tokens"]:
                 temp_num = []
                 flag_not = True
@@ -243,11 +246,12 @@ class Seq2Tree(Model):
                             temp_num.append(i)
 
                 if not flag_not and len(temp_num) != 0:
-                    num_stack.append(temp_num)
+                    copy_positions.append(temp_num)
                 if not flag_not and len(temp_num) == 0:
-                    num_stack.append(
+                    copy_positions.append(
                         [_ for _ in range(len(metadata["numbers"]))])
-            num_stack.reverse()
-            batch_num_stack.append(num_stack)
+            copy_positions.reverse()
 
-        return batch_num_stack
+            batch_copy_positions.append(copy_positions)
+
+        return batch_copy_positions

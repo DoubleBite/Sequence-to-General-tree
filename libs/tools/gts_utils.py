@@ -86,23 +86,21 @@ class TreeNode:  # the class save the tree node
         self.left_flag = left_flag
 
 
-
 class TreeBeam:  # the class save the beam node
-    def __init__(self, score, node_stack, embedding_stack, left_childs, out):
+    def __init__(self, score, node_stack, embedding_stack, left_childs, out, knows=None):
         self.score = score
         self.embedding_stack = copy_list(embedding_stack)
         self.node_stack = copy_list(node_stack)
         self.left_childs = copy_list(left_childs)
         self.out = copy.deepcopy(out)
-
+        self.knows = copy.deepcopy(knows)
 
 class TreeEmbedding:  # the class save the tree
     def __init__(self, embedding, terminal=False, op_type=None):
         self.embedding = embedding
         self.terminal = terminal
         self.op_type = op_type
-        
-        
+
 def sequence_mask(sequence_length, max_len=None):
     if max_len is None:
         max_len = sequence_length.data.max()

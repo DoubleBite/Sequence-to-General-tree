@@ -20,7 +20,7 @@ local number_of_branch_map = import '../extra_files/number_of_branches.jsonnet';
         "type": "S2G-KG",
         "target_namespace": "equation_vocab",
         "number_of_branch_map": number_of_branch_map,
-        "child_node_generator":{
+        "child_state_generator":{
             "type": "gru",
             "input_size": 128,
             "hidden_size": 512

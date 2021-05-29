@@ -48,12 +48,10 @@ We also provide scripts to run the experiments using AllenNLP `bucket_sampler`.
 + `run_s2g_bucket.sh`: run **S2G** on GeometryQA using bucket_sampler.
 + `run_s2gkg_bucket.sh`: run **S2G+KG** on GeometryQA using bucket_sampler.
 
-RESULT DIR 這邊要改一下，不太直覺
 
-
-To run the shell scripts above, please use the following command. The command will create a directory `results/RESULT_DIR` to store the model parameters and experimental results.
+To run the shell scripts above, please use the following command. The command will create a "RESULT_DIR" folder in "results" directory and store the model parameters and experimental results there.
 ```
-bash run_XXX.sh RESULT_DIR
+bash run_XXX.sh {RESULT_DIR}
 ```
 
 Using the following command to evaluate the performance.

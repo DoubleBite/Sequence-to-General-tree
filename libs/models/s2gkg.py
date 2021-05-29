@@ -25,7 +25,7 @@ from allennlp.nn import InitializerApplicator, util
 # Self-defined
 from libs.models.sequence_to_tree_base import Seq2Tree
 from libs.modules.gts_modules import Prediction, Merge, EncoderSeq
-from libs.modules.child_node_generators import ChildNodeGenerator
+from libs.modules.child_state_generators import ChildStateGenerator
 from libs.modules.decoder import Prediction
 from libs.tools.gts_utils import TreeNode, masked_cross_entropy, TreeEmbedding, generate_tree_input
 from libs.tools.gts_utils import get_all_number_encoder_outputs, TreeBeam, copy_list
@@ -55,7 +55,7 @@ class Seq2GeneralTreeKG(Seq2Tree):
         self,
         vocab: Vocabulary,
         number_of_branch_map: Dict[str, int],
-        child_node_generator: ChildNodeGenerator,
+        child_state_generator: ChildStateGenerator,
         target_namespace: str = "equation_vocab",
         embedding_size: int = 128,
         hidden_size: int = 512,
@@ -79,7 +79,7 @@ class Seq2GeneralTreeKG(Seq2Tree):
                            embedding_size=embedding_size)
 
         # The generator to generate arbitrary number of child states
-        self.generator = child_node_generator
+        self.generator = child_state_generator
 
         # Prediction module with GNN input
         self.predict = Prediction(hidden_size=hidden_size, op_nums=self.num_operations,

@@ -64,5 +64,20 @@ python evaluate.py results/RESULT_DIR --five_fold
 You can cite us using the following BibTeX:
 
 ```
+@inproceedings{tsai-etal-2021-sequence,
+    title = "Sequence to General Tree: Knowledge-Guided Geometry Word Problem Solving",
+    author = "Tsai, Shih-hung  and
+      Liang, Chao-Chun  and
+      Wang, Hsin-Min  and
+      Su, Keh-Yih",
+    booktitle = "Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 2: Short Papers)",
+    month = aug,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.acl-short.121",
+    doi = "10.18653/v1/2021.acl-short.121",
+    pages = "964--972",
+}
 To be updated soon.
 ```

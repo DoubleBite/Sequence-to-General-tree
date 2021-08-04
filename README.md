@@ -59,7 +59,7 @@ Using the following command to evaluate the performance.
 python evaluate.py results/RESULT_DIR --five_fold
 ```
 
-## Citation
+## Cite us
 
 You can cite us using the following BibTeX:
 
